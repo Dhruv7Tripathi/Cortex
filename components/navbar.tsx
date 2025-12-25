@@ -1,0 +1,303 @@
+"use client"
+
+import { useRef, useState, useEffect } from "react"
+import { motion } from "framer-motion"
+import { cn } from "@/lib/utils"
+import { Themetoggle } from "./ui/themetoggle"
+import Image from "next/image"
+import { ChevronDown, Menu } from "lucide-react"
+import { SiGithub } from "react-icons/si"
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+
+const products = [
+  {
+    title: "Linear Temp — UI Template",
+    href: "#uitemplate",
+    src: "https://layrdui.in/products/linear.png",
+    description: "A clean, responsive Next.js + Tailwind template designed for fast product launches and consistent UI.",
+  },
+  {
+    title: "Linear Temp — Docs Kit",
+    href: "#docskit",
+    src: "https://layrdui.in/products/polar-auth.png",
+    description: "Documentation and component guidelines for shipping polished docs, changelogs, and marketing pages quickly.",
+  },
+  {
+    title: "Linear Temp — Blog Starter",
+    href: "#blogstarter",
+    src: "https://layrdui.in/products/linear1.png",
+    description: "Content-first blog layout with MDX support, SEO optimizations, and ready-to-use post templates.",
+  },
+  {
+    title: "Linear Temp — Dashboard",
+    href: "#dashboard",
+    src: "https://layrdui.in/products/linear2.png",
+    description: "Admin and analytics dashboard patterns with reusable components for monitoring and insights.",
+  },
+]
+
+export const Navbar = () => {
+  const [isProductOpen, setIsProductOpen] = useState(false)
+  const [isMobileOpen, setIsMobileOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement | null>(null)
+  const buttonRef = useRef<HTMLButtonElement | null>(null)
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isProductOpen) return
+
+      const dropdown = dropdownRef.current
+      const button = buttonRef.current
+
+      if (!dropdown || !button) return
+
+      const { clientX, clientY } = e
+      const dropdownBounds = dropdown.getBoundingClientRect()
+      const buttonBounds = button.getBoundingClientRect()
+
+      const bufferZone = 20
+
+      const isOverButton =
+        clientX >= buttonBounds.left &&
+        clientX <= buttonBounds.right &&
+        clientY >= buttonBounds.top &&
+        clientY <= buttonBounds.bottom + bufferZone
+
+      const isOverDropdown =
+        clientX >= dropdownBounds.left &&
+        clientX <= dropdownBounds.right &&
+        clientY >= dropdownBounds.top - bufferZone &&
+        clientY <= dropdownBounds.bottom
+
+      if (!isOverButton && !isOverDropdown) {
+        setIsProductOpen(false)
+      }
+    }
+
+    if (isProductOpen) {
+      window.addEventListener("mousemove", handleMouseMove)
+      return () => window.removeEventListener("mousemove", handleMouseMove)
+    }
+  }, [isProductOpen])
+
+  return (
+    <nav
+      className={cn(
+        "w-full transition-all border-b-2 dark:border-neutral-900 border-neutral-200 duration-300 bg-white dark:bg-black backdrop-blur-md fixed top-0 left-0 right-0 z-50",
+      )}
+    >
+      <div className="w-full flex items-center justify-between px-3 sm:px-4 md:px-6 lg:px-8 py-2.5 sm:py-3">
+        {/* Left: Logo and Nav */}
+        <div className="flex items-center space-x-2 sm:space-x-4">
+          <Link href="/" className="flex space-x-1.5 sm:space-x-2 items-center">
+            <Image
+              width={500}
+              height={500}
+              src={"/logo.png"}
+              alt="Linear Logo"
+              quality={100}
+              priority={true}
+              className="h-8 w-8 sm:h-9 sm:w-9 dark:invert lg:h-10 lg:w-10 flex-shrink-0 rounded-xl object-cover"
+            />
+            <h3 className="text-base sm:text-lg lg:text-xl font-bold text-black dark:text-white">Linear</h3>
+          </Link>
+
+          {/* Desktop Navigation - Hidden on mobile and small tablets */}
+          <div className="hidden lg:flex px-4 xl:px-8 text-sm font-semibold space-x-4 xl:space-x-6 text-neutral-800 dark:text-neutral-200">
+            {/* Products Dropdown */}
+            <div className="relative z-50" onMouseEnter={() => setIsProductOpen(true)}>
+              <button
+                ref={buttonRef}
+                className="flex items-center gap-1 font-semibold hover:bg-neutral-100 py-2 px-3 rounded-lg dark:hover:bg-neutral-900 dark:text-neutral-50 text-neutral-950"
+              >
+                Products
+                <motion.div animate={{ rotate: isProductOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                  <ChevronDown className="w-4 h-4" />
+                </motion.div>
+              </button>
+
+              <motion.div
+                ref={dropdownRef}
+                initial={false}
+                animate={isProductOpen ? "open" : "closed"}
+                variants={{
+                  open: { opacity: 1, y: 0, pointerEvents: "auto", display: "block" },
+                  closed: { opacity: 0, y: -10, pointerEvents: "none", transitionEnd: { display: "none" } },
+                }}
+                transition={{ duration: 0.2 }}
+                className="absolute top-full left-0 mt-4 w-[550px] xl:w-[600px] bg-white dark:bg-black text-black dark:text-white z-[100] rounded-xl shadow-xl border border-neutral-300 dark:border-neutral-800"
+              >
+                <div className="grid grid-cols-2 gap-4 xl:gap-6 p-4 xl:p-6">
+                  {products.map((product, idx) => (
+                    <a
+                      key={idx}
+                      href={product.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-900 p-3 rounded-lg transition"
+                    >
+                      <div className="mb-3 overflow-hidden rounded-lg">
+                        <img
+                          src={product.src}
+                          alt={product.title}
+                          className="w-full h-28 xl:h-32 object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                      <div className="font-semibold text-sm xl:text-base mb-1">{product.title}</div>
+                      <div className="text-xs xl:text-sm text-neutral-600 dark:text-neutral-400">{product.description}</div>
+                    </a>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+
+            <a
+              href="#pricing"
+              className="hover:bg-neutral-100 py-2 px-3 rounded-lg dark:hover:bg-neutral-900 dark:text-neutral-50 text-neutral-950"
+              onMouseEnter={() => setIsProductOpen(false)}
+            >
+              Pricing
+            </a>
+            <a
+              href="#faq"
+              className="hover:bg-neutral-100 py-2 px-3 rounded-lg dark:hover:bg-neutral-900 dark:text-neutral-50 text-neutral-950"
+              onMouseEnter={() => setIsProductOpen(false)}
+            >
+              FAQ
+            </a>
+            <a
+              href="#blog"
+              className="hover:bg-neutral-100 py-2 px-3 rounded-lg dark:hover:bg-neutral-900 dark:text-neutral-50 text-neutral-950"
+              onMouseEnter={() => setIsProductOpen(false)}
+            >
+              Blog
+            </a>
+            <a
+              href="#contact"
+              className="hover:bg-neutral-100 py-2 px-3 rounded-lg dark:hover:bg-neutral-900 dark:text-neutral-50 text-neutral-950"
+              onMouseEnter={() => setIsProductOpen(false)}
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+
+        {/* Right: Actions */}
+        <div className="flex items-center ml-auto space-x-1.5 sm:space-x-2 md:space-x-3">
+          {/* GitHub Link - Visible on sm and up */}
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:flex p-1.5 sm:p-2 rounded-lg flex-row items-center space-x-1.5 sm:space-x-2 hover:bg-neutral-100 dark:hover:bg-neutral-900"
+          >
+            <SiGithub size={18} className="sm:w-5 sm:h-5" />
+            <span className="hidden md:block text-neutral-950 font-semibold dark:text-neutral-50 text-sm">23.5K</span>
+          </a>
+
+          {/* Theme Toggle */}
+          <Themetoggle />
+
+          {/* Login Button - Hidden on mobile, visible on md and up */}
+          <button className="hidden md:block dark:hover:bg-neutral-900 font-semibold hover:bg-neutral-100 rounded-lg py-1.5 px-3 lg:py-2 lg:px-4 text-sm">
+            Login
+          </button>
+
+          {/* Sign Up Button - Always visible but responsive sizing */}
+          <button className="dark:bg-neutral-900 font-semibold ring ring-neutral-300 dark:ring-neutral-600 bg-neutral-100 text-neutral-950 dark:text-neutral-50 px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-black border border-neutral-200 dark:border-neutral-950 hover:border-white dark:hover:border-black transition-colors duration-300 text-xs sm:text-sm">
+            Sign Up
+          </button>
+
+          {/* Mobile Menu - Visible on lg and below */}
+          <Sheet open={isMobileOpen} onOpenChange={setIsMobileOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="sm" className="lg:hidden p-1.5 sm:p-2">
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[280px] sm:w-[320px] md:w-[400px]">
+              <SheetHeader>
+                <SheetTitle className="text-lg font-semibold">Menu</SheetTitle>
+              </SheetHeader>
+              <div className="flex flex-col space-y-4 mt-8">
+                {/* Mobile Products Section */}
+                <div className="space-y-3 ml-1.5 sm:ml-2">
+                  <h3 className="font-semibold  text-base sm:text-lg">Products</h3>
+                  {products.map((product, idx) => (
+                    <a
+                      key={idx}
+                      href={product.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block pl-3 sm:pl-4 space-y-1 hover:bg-neutral-100 dark:hover:bg-neutral-900 p-2 rounded-lg transition"
+                      onClick={() => setIsMobileOpen(false)}
+                    >
+                      <div className="font-medium text-sm sm:text-base">{product.title}</div>
+                      <div className="text-xs sm:text-sm text-muted-foreground">{product.description}</div>
+                    </a>
+                  ))}
+                </div>
+
+                {/* Mobile Navigation Links */}
+                <div className="space-y-2 pt-4 border-t">
+                  <a
+                    href="#pricing"
+                    className="block py-2 px-3 sm:px-4 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-900 font-medium text-sm sm:text-base"
+                    onClick={() => setIsMobileOpen(false)}
+                  >
+                    Pricing
+                  </a>
+                  <a
+                    href="#faq"
+                    className="block py-2 px-3 sm:px-4 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-900 font-medium text-sm sm:text-base"
+                    onClick={() => setIsMobileOpen(false)}
+                  >
+                    FAQ
+                  </a>
+                  <a
+                    href="#blog"
+                    className="block py-2 px-3 sm:px-4 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-900 font-medium text-sm sm:text-base"
+                    onClick={() => setIsMobileOpen(false)}
+                  >
+                    Blog
+                  </a>
+                  <a
+                    href="#contact"
+                    className="block py-2 px-3 sm:px-4 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-900 font-medium text-sm sm:text-base"
+                    onClick={() => setIsMobileOpen(false)}
+                  >
+                    Contact
+                  </a>
+                </div>
+
+                {/* Mobile Login Button - Only show on small devices where desktop login is hidden */}
+                <div className="pt-4 border-t md:hidden">
+                  <button className="w-full py-2 px-3 sm:px-4 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-900 font-medium text-sm sm:text-base">
+                    Login
+                  </button>
+                </div>
+
+                {/* Mobile GitHub Link - Only show on very small devices */}
+                <div className="pt-4 border-t sm:hidden">
+                  <a
+                    href="https://github.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center space-x-2 py-2 px-4 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-900 font-medium"
+                    onClick={() => setIsMobileOpen(false)}
+                  >
+                    <SiGithub size={18} />
+                    <span>23.5K Stars</span>
+                  </a>
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </div>
+    </nav>
+  )
+}
