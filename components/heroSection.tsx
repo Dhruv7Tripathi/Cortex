@@ -32,16 +32,15 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row justify-center items-center mt-8 sm:mt-10 md:mt-12 gap-3 sm:gap-4">
             <Button
               size="lg"
-              className="bg-black dark:bg-neutral-50 dark:text-neutral-950 text-white px-6 py-3 font-semibold rounded-3xl transition duration-300 w-full sm:w-auto min-w-[180px]"
+              className="bg-black dark:bg-neutral-50 dark:text-neutral-950 text-white px-6 py-3 font-semibold rounded-lg transition duration-300 w-full sm:w-auto min-w-[180px]"
             >
-              Start Free Trial
+              Start Building
             </Button>
             <Button
               size="lg"
-              className="text-base rounded-3xl bg-white border border-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-900 dark:bg-black text-neutral-900 dark:text-neutral-100 flex items-center w-full sm:w-auto min-w-[180px]"
+              className="text-base rounded-lg bg-white border border-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-900 dark:bg-black text-neutral-900 dark:text-neutral-100 flex items-center w-full sm:w-auto min-w-[180px]"
             >
-              <SiDiscord className="mr-2 h-5 w-5" />
-              Community
+              View Pricing
             </Button>
           </div>
         </div>
