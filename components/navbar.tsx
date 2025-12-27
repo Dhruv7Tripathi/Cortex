@@ -100,7 +100,7 @@ export const Navbar = () => {
               alt="Linear Logo"
               quality={100}
               priority={true}
-              className="h-8 w-8 sm:h-9 sm:w-9 dark:invert lg:h-10 lg:w-10 flex-shrink-0 rounded-xl object-cover"
+              className="h-8 w-8 sm:h-9 sm:w-9 dark:invert-0 invert  lg:h-10 lg:w-10 flex-shrink-0 rounded-xl object-cover"
             />
             <h3 className="text-base sm:text-lg lg:text-xl font-bold text-black dark:text-white">Cortex</h3>
           </Link>
