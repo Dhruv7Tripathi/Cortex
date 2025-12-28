@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
-// import TopBanner from "@/components/ui/top-banner";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
+
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Linear Template | LayrdUI",
-    template: "%s | Linear Template",
+    default: "Cortex Template | LayrdUI",
+    template: "%s | Cortex Template",
   },
   description:
-    "Linear – A modern, sleek, and responsive landing page template built with Next.js and Tailwind CSS. Perfect for startups and SaaS products.",
+    "Cortex – A modern, sleek, and responsive landing page template built with Next.js and Tailwind CSS. Perfect for startups and SaaS products.",
   keywords: [
     "Next.js landing page",
     "Tailwind CSS template",
@@ -35,27 +35,27 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://linear-template.vercel.app",
-    title: "Linear Template | LayrdUI",
+    url: "https://cortex-template.vercel.app",
+    title: "Cortex Template | LayrdUI",
     description:
       "A modern, sleek, and responsive landing page template built with Next.js and Tailwind CSS.",
-    siteName: "Linear Template",
+    siteName: "Cortex Template",
     images: [
       {
         url: "https://linear-template.vercel.app/og-image.png", // replace with your actual image
         width: 1200,
         height: 630,
-        alt: "Linear Template Open Graph Image",
+        alt: "Cortex Template Open Graph Image",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Linear Template | LayrdUI",
+    title: "Cortex Template | LayrdUI",
     description:
       "A modern, sleek, and responsive landing page template built with Next.js and Tailwind CSS.",
     creator: "@layrdui", // replace with your Twitter handle if available
-    images: ["https://linear-template.vercel.app/og-image.png"], // replace with your actual image
+    images: ["https://cortex-template.vercel.app/og-image.png"], // replace with your actual image
   },
   robots: {
     index: true,
@@ -84,7 +84,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <TopBanner /> */}
           <div className="bg-white dark:bg-black min-h-screen">
             {children}
           </div>

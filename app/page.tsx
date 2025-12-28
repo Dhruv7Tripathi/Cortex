@@ -18,7 +18,7 @@ export default function HomePage() {
         md:mx-4 md:px-0
         md:border-l md:border-r md:border-neutral-200 md:dark:border-neutral-900
         
-        lg:mx-8 xl:mx-12
+        lg:mx-8 xl:mx-20
         lg:border-l lg:border-r lg:border-neutral-200 lg:dark:border-neutral-900
       `}>
 

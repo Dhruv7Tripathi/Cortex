@@ -26,7 +26,7 @@ export default function Footer() {
                   priority={true}
                   className="h-8 w-8 sm:h-10 sm:w-10 flex-shrink-0 dark:invert-0 invert rounded-xl object-cover"
                 />
-                <h3 className="text-lg sm:text-xl font-bold text-black dark:text-white">Linear</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-black dark:text-white">Cortex</h3>
               </Link>
               <p className="text-neutral-600 dark:text-neutral-300 text-sm sm:text-base leading-relaxed">
                 Linear is a modern project management tool designed for high-performance teams. Built for speed and collaboration.

@@ -89,7 +89,7 @@ export const Navbar = () => {
       )}
     >
 
-      <div className="w-full flex  px-3 sm:px-4 md:px-6 lg:px-8 py-2.5 sm:py-3">
+      <div className="max-w-7xl mx-auto grid grid-cols-3 items-center px-3 sm:px-4 md:px-6 lg:px-8 py-2.5 sm:py-3">
         {/* Left: Logo and Nav */}
         <div className="flex items-center space-x-2 sm:space-x-4">
           <Link href="/" className="flex space-x-1.5 sm:space-x-2 items-center">
@@ -105,7 +105,7 @@ export const Navbar = () => {
             <h3 className="text-base sm:text-lg lg:text-xl font-bold text-black dark:text-white">Cortex</h3>
           </Link>
         </div>
-        <div className="hidden lg:flex px-4 xl:px-8 text-sm font-semibold space-x-4 xl:space-x-6 text-neutral-800 dark:text-neutral-200">
+        <div className="hidden lg:flex justify-center items-center px-4 xl:px-8 text-sm font-semibold space-x-4 xl:space-x-6 text-neutral-800 dark:text-neutral-200">
           {/* Products Dropdown */}
           <div className="relative z-50" onMouseEnter={() => setIsProductOpen(true)}>
             <button
