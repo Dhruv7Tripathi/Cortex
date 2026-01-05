@@ -5,6 +5,7 @@ import FAQ from "@/components/faq-section";
 import { Pricing } from "@/components/pricing";
 import { TestimonialsSection } from "@/components/testimonial-section";
 import BentoSection from "@/components/bento-grid";
+import CTASection from "@/components/cta";
 export default function HomePage() {
   return (
     <div className="bg-white dark:bg-black text-gray-900 dark:text-gray-100">
@@ -70,9 +71,8 @@ export default function HomePage() {
           <section>
             <FAQ />
           </section>
-
-          {/* Footer Section */}
-          <section className="pb-0">
+          <section>
+            <CTASection />
           </section>
 
         </div>

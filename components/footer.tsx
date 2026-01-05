@@ -170,7 +170,6 @@ export default function Footer() {
               Cortex is a modern project management tool designed for high-performance teams. Built for speed and collaboration.
             </p>
           </div>
-          <p className="text-zinc-400 max-w-xs leading-relaxed">Manage and simulate agentic workflows</p>
           <Button className="bg-white text-black hover:bg-zinc-200 rounded-lg px-6 font-semibold">
             Start building
           </Button>

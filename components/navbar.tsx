@@ -85,7 +85,7 @@ export const Navbar = () => {
   return (
     <nav
       className={cn(
-        "w-full transition-all border-b-2 dark:border-neutral-900 border-neutral-200 duration-300 bg-white dark:bg-black backdrop-blur-md fixed top-0 left-0 right-0 z-50",
+        "w-full transition-all border-b-2 dark:border-neutral-900 border-neutral-200 duration-300 bg-white dark:bg-black backdrop-blur-md  left-0 right-0 z-50",
       )}
     >
 

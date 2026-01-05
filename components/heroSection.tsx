@@ -66,25 +66,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="border-t border-zinc-900 bg-black py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <p className="text-center text-zinc-500 text-xs font-bold tracking-[0.2em] uppercase mb-12">
-            Trusted by fast growing startups
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-zinc-900 border border-zinc-900">
-            {["Attention", "bill", "Hippocratic AI", "Replicate", "granola", "Primer", "Bridge", "incident.io"].map(
-              (brand) => (
-                <div
-                  key={brand}
-                  className="bg-black flex items-center justify-center p-8 grayscale opacity-50 hover:opacity-100 transition-opacity"
-                >
-                  <span className="text-white font-bold text-lg">{brand}</span>
-                </div>
-              ),
-            )}
-          </div>
-        </div>
-      </div>
+
     </div>
   )
 }
