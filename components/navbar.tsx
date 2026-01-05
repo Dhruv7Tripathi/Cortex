@@ -113,12 +113,12 @@ export const Navbar = () => {
               className="flex items-center gap-1 font-semibold hover:bg-neutral-100 py-2 px-3 rounded-lg dark:hover:bg-neutral-900 dark:text-neutral-50 text-neutral-950"
             >
               Products
-              <motion.div animate={{ rotate: isProductOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
+              {/* <motion.div animate={{ rotate: isProductOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
                 <ChevronDown className="w-4 h-4" />
-              </motion.div>
+              </motion.div> */}
             </button>
 
-            <motion.div
+            {/* <motion.div
               ref={dropdownRef}
               initial={false}
               animate={isProductOpen ? "open" : "closed"}
@@ -150,7 +150,7 @@ export const Navbar = () => {
                   </a>
                 ))}
               </div>
-            </motion.div>
+            </motion.div> */}
           </div>
 
           <a
@@ -188,7 +188,7 @@ export const Navbar = () => {
           </button> */}
 
           {/* Sign Up Button - Always visible but responsive sizing */}
-          <button className="dark:bg-neutral-100 font-semibold ring ring-neutral-300 dark:ring-neutral-600 bg-neutral-900 text-neutral-50 dark:text-neutral-900 px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-black border border-neutral-200 dark:border-neutral-950 hover:border-white dark:hover:border-black transition-colors duration-300 text-xs sm:text-sm">
+          <button className="dark:bg-neutral-100 font-semibold ring ring-neutral-300 dark:ring-neutral-600 bg-neutral-900 text-neutral-50 dark:text-neutral-900 px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-3 rounded-lg hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-black border border-neutral-200 dark:border-neutral-950 hover:border-white dark:hover:border-black transition-colors duration-300 text-xs sm:text-sm">
             Start Building
           </button>
 
