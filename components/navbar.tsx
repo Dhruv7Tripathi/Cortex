@@ -44,43 +44,43 @@ export const Navbar = () => {
   const dropdownRef = useRef<HTMLDivElement | null>(null)
   const buttonRef = useRef<HTMLButtonElement | null>(null)
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!isProductOpen) return
+  // useEffect(() => {
+  //   const handleMouseMove = (e: MouseEvent) => {
+  //     if (!isProductOpen) return
 
-      const dropdown = dropdownRef.current
-      const button = buttonRef.current
+  //     const dropdown = dropdownRef.current
+  //     const button = buttonRef.current
 
-      if (!dropdown || !button) return
+  //     if (!dropdown || !button) return
 
-      const { clientX, clientY } = e
-      const dropdownBounds = dropdown.getBoundingClientRect()
-      const buttonBounds = button.getBoundingClientRect()
+  //     const { clientX, clientY } = e
+  //     const dropdownBounds = dropdown.getBoundingClientRect()
+  //     const buttonBounds = button.getBoundingClientRect()
 
-      const bufferZone = 20
+  //     const bufferZone = 20
 
-      const isOverButton =
-        clientX >= buttonBounds.left &&
-        clientX <= buttonBounds.right &&
-        clientY >= buttonBounds.top &&
-        clientY <= buttonBounds.bottom + bufferZone
+  //     const isOverButton =
+  //       clientX >= buttonBounds.left &&
+  //       clientX <= buttonBounds.right &&
+  //       clientY >= buttonBounds.top &&
+  //       clientY <= buttonBounds.bottom + bufferZone
 
-      const isOverDropdown =
-        clientX >= dropdownBounds.left &&
-        clientX <= dropdownBounds.right &&
-        clientY >= dropdownBounds.top - bufferZone &&
-        clientY <= dropdownBounds.bottom
+  //     const isOverDropdown =
+  //       clientX >= dropdownBounds.left &&
+  //       clientX <= dropdownBounds.right &&
+  //       clientY >= dropdownBounds.top - bufferZone &&
+  //       clientY <= dropdownBounds.bottom
 
-      if (!isOverButton && !isOverDropdown) {
-        setIsProductOpen(false)
-      }
-    }
+  //     if (!isOverButton && !isOverDropdown) {
+  //       setIsProductOpen(false)
+  //     }
+  //   }
 
-    if (isProductOpen) {
-      window.addEventListener("mousemove", handleMouseMove)
-      return () => window.removeEventListener("mousemove", handleMouseMove)
-    }
-  }, [isProductOpen])
+  //   if (isProductOpen) {
+  //     window.addEventListener("mousemove", handleMouseMove)
+  //     return () => window.removeEventListener("mousemove", handleMouseMove)
+  //   }
+  // }, [isProductOpen])
 
   return (
     <nav
@@ -183,13 +183,13 @@ export const Navbar = () => {
           <Themetoggle />
 
           {/* Login Button - Hidden on mobile, visible on md and up */}
-          <button className="hidden md:block dark:hover:bg-neutral-900 font-semibold hover:bg-neutral-100 rounded-lg py-1.5 px-3 lg:py-2 lg:px-4 text-sm">
+          {/* <button className="hidden md:block dark:hover:bg-neutral-900 font-semibold hover:bg-neutral-100 rounded-lg py-1.5 px-3 lg:py-2 lg:px-4 text-sm">
             Login
-          </button>
+          </button> */}
 
           {/* Sign Up Button - Always visible but responsive sizing */}
-          <button className="dark:bg-neutral-900 font-semibold ring ring-neutral-300 dark:ring-neutral-600 bg-neutral-100 text-neutral-950 dark:text-neutral-50 px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-black border border-neutral-200 dark:border-neutral-950 hover:border-white dark:hover:border-black transition-colors duration-300 text-xs sm:text-sm">
-            Sign Up
+          <button className="dark:bg-neutral-100 font-semibold ring ring-neutral-300 dark:ring-neutral-600 bg-neutral-900 text-neutral-50 dark:text-neutral-900 px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-black border border-neutral-200 dark:border-neutral-950 hover:border-white dark:hover:border-black transition-colors duration-300 text-xs sm:text-sm">
+            Start Building
           </button>
 
           {/* Mobile Menu - Visible on lg and below */}

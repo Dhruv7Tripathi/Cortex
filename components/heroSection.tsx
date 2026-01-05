@@ -4,7 +4,7 @@ import Image from "next/image"
 import { ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Button as B2 } from "./ui/moving-border"
-import { SiDiscord } from "react-icons/si"
+import TextShimmer from "./ui/text-shimmer"
 import SelectedBrands from "./brands"
 
 const HeroSection = () => {
@@ -16,13 +16,11 @@ const HeroSection = () => {
         animate="visible"
       >
         <div className="max-w-7xl mx-auto text-center space-y-4 sm:space-y-5 md:space-y-6 px-4 sm:px-6 lg:px-8">
-          <B2
-            borderRadius="0.5rem"
-            className="bg-white rounded-lg dark:bg-black text-black dark:text-white border-neutral-200 dark:border-neutral-800"
-          >
-            Public beta is live <ChevronRight className="ml-2 mt-0.5 size-4" />
-          </B2>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-6 sm:mt-7 md:mt-8 font-sans font-bold">
+          <TextShimmer
+            spread={1.2}
+            className="text-green-600 text-sm ">For fast moving engineering teams</TextShimmer>
+          {/* <h1>For fast moving engineering teams</h1> */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl  font-sans font-bold">
             Build the future with Linear
           </h1>
           <p className="max-w-[280px] sm:max-w-[400px] md:max-w-[550px] lg:max-w-[650px] mx-auto font-semibold text-neutral-800 dark:text-neutral-300 text-sm sm:text-base md:text-lg">
@@ -32,7 +30,7 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row justify-center items-center mt-8 sm:mt-10 md:mt-12 gap-3 sm:gap-4">
             <Button
               size="lg"
-              className="bg-black dark:bg-neutral-50 dark:text-neutral-950 text-white px-6 py-3 font-semibold rounded-lg transition duration-300 w-full sm:w-auto min-w-[180px]"
+              className="bg-black text-base dark:bg-neutral-50 dark:text-neutral-950 text-white px-6 py-3 font-semibold rounded-lg transition duration-300 w-full sm:w-auto min-w-[180px]"
             >
               Start Building
             </Button>
