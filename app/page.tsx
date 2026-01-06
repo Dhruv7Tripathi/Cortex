@@ -6,6 +6,7 @@ import { Pricing } from "@/components/pricing";
 import { TestimonialsSection } from "@/components/testimonial-section";
 import BentoSection from "@/components/bento-grid";
 import CTASection from "@/components/cta";
+import IntegrationsSection from "@/components/integration-section";
 export default function HomePage() {
   return (
     <div className="bg-white dark:bg-black text-gray-900 dark:text-gray-100">
@@ -55,6 +56,10 @@ export default function HomePage() {
           {/* Bento Grid Section */}
           <section>
             <BentoSection />
+          </section>
+
+          <section>
+            <IntegrationsSection />
           </section>
 
           {/* Pricing Section */}

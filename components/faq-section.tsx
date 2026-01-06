@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import TextShimmer from "./ui/text-shimmer"
 import { faqData } from "@/contants"
