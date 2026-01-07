@@ -14,8 +14,8 @@ export function PricingSection({
   const [selectedFrequency] = React.useState(frequencies[0])
 
   return (
-    <section className="flex flex-col gap-10 py-16 ml-8 mr-8">
-      <div className="grid  gap-6 justify-center items-center sm:grid-cols-2 xl:grid-cols-4">
+    <section className="flex flex-col  py-16 ">
+      <div className="grid   justify-center items-center sm:grid-cols-2 xl:grid-cols-4">
         {tiers.map((tier) => (
           <PricingCard
             key={tier.name}
