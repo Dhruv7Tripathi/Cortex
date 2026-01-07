@@ -8,6 +8,7 @@ import { TbLayoutGrid } from 'react-icons/tb';
 import { Button } from "./ui/button"
 import EventCard from "./ui/event-card"
 import GlideSelect from "./ui/glide-select";
+import TextShimmer from "./ui/text-shimmer";
 type TaskRow = {
   task: string
   assignees: string[]
@@ -16,17 +17,16 @@ type TaskRow = {
 }
 function SectionIntro() {
   return (
-    <header className="pt-10 ml-8 sm:pt-16 lg:pt-20">
-      <div className="mb-4">
-        <Button variant="outline" size="sm" className="gap-2 bg-transparent">
-          <TbLayoutGrid className="size-4" />
+    <header className="pt-10 ml-8 flex flex-col justify-center items-center sm:pt-16 lg:pt-20">
+      <div className="mb-1">
+        <TextShimmer className="text-orange-600 text-sm font-medium tracking-wide uppercase">
           Adaptive
-        </Button>
+        </TextShimmer>
       </div>
-      <h1 className="mt-6 text-balance text-4xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+      <h1 className="mt-6 text-balance text-3xl font-semibold tracking-tight sm:text-3xl lg:text-4xl">
         Stay agile with adaptive workflows
       </h1>
-      <p className="mt-4 max-w-3xl text-pretty text-base text-muted-foreground sm:text-lg">
+      <p className="mt-4 max-w-3xl text-pretty text-base text-muted-foreground sm:text-sm">
         AI streamlines your processes to adjust as priorities shift.
       </p>
     </header>
@@ -186,7 +186,7 @@ const steps = [
 
 export default function BentoSection() {
   return (
-    <div className="pb-16 lg:mx-0 md:mx-auto  px-4 sm:px-6 ">
+    <div className="pb-16 lg:mx-0  md:mx-auto  px-4 sm:px-6 ">
       <SectionIntro />
 
       {/* Features grid */}

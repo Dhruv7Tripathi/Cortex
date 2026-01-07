@@ -25,26 +25,26 @@ export default function HomePage() {
       `}>
 
         {/* Content Sections */}
-        <div className="space-y-12 sm:space-y-16 lg:space-y-20">
+        <div className="space-y-12 sm:space-y-16 lg:space-y-2">
 
           {/* Hero Section */}
           <section className="pt-8 sm:pt-12 lg:pt-16">
             <HeroSection />
           </section>
           <section>
-            <div className="border-t border-zinc-900 bg-black py-20">
-              <div className="max-w-6xl mx-auto px-4">
-                <p className="text-center text-zinc-500 text-xs font-bold tracking-[0.2em] uppercase mb-12">
+            <div className="border-t border-neutral-100 dark:border-neutral-900 bg-white dark:bg-black py-20">
+              <div className=" ">
+                <p className="text-center dark:text-neutral-100 text-neutral-900 text-xs font-bold tracking-[0.2em] uppercase mb-12">
                   Trusted by fast growing startups
                 </p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-zinc-900 border border-zinc-900">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white dark:bg-black border border-neutral-100 dark:border-neutral-900">
                   {["Attention", "bill", "Hippocratic AI", "Replicate", "granola", "Primer", "Bridge", "incident.io"].map(
                     (brand) => (
                       <div
                         key={brand}
-                        className="bg-black flex items-center justify-center p-8 grayscale opacity-50 hover:opacity-100 transition-opacity"
+                        className="bg-white dark:bg-black flex items-center justify-center p-8 grayscale opacity-50 hover:opacity-100 transition-opacity"
                       >
-                        <span className="text-white font-bold text-lg">{brand}</span>
+                        <span className="dark:text-white text-black font-bold text-lg">{brand}</span>
                       </div>
                     ),
                   )}

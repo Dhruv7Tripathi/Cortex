@@ -1,6 +1,7 @@
 import { PricingSection } from "@/components/ui/pricing-section"
 import { Button } from "./ui/button";
 import { MdWorkspacePremium } from "react-icons/md";
+import TextShimmer from "./ui/text-shimmer";
 
 export const PAYMENT_FREQUENCIES = ["monthly", "yearly"]
 
@@ -79,12 +80,11 @@ export const TIERS = [
 export function Pricing() {
   return (
     <div className="justify-center flex flex-col py-8 sm:py-12 md:py-16 lg:py-20 border-t border-neutral-200 dark:border-neutral-900 bg-white dark:bg-black mt-8 ">
-      <div className="space-y-7 ml-8 mb-8 sm:mb-1 md:mb-3 lg:mb-6">
+      <div className="space-y-6 ml-8 mb-8 sm:mb-1 md:mb-3 lg:mb-6">
         <div className="flex flex-col justify-center items-center">
-          <Button variant="outline" size="sm" className="gap-2 bg-transparent">
-            <MdWorkspacePremium className="size-4" />
-            Spenders Lounge
-          </Button>
+          <TextShimmer className="text-orange-600 text-sm font-medium tracking-wide uppercase">
+            Spenders lounge
+          </TextShimmer>
         </div>
         <div className="space-y-4 flex flex-col justify-center items-center">
           <h1 className="text-4xl font-medium md:text-4xl">Pricing for teams of all sizes</h1>

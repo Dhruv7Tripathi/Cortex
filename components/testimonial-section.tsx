@@ -3,6 +3,7 @@ import Image from "next/image"
 import { SiGithub, SiNotion, SiFigma, SiLoom, SiSlack, SiZerodha } from "react-icons/si"
 import { FaSmileBeam } from 'react-icons/fa';
 import { Button } from "./ui/button";
+import TextShimmer from "./ui/text-shimmer";
 
 interface Testimonial {
   id: string
@@ -94,17 +95,16 @@ const testimonials: Testimonial[] = [
 export function TestimonialsSection() {
   return (
     <section className="py-8 sm:py-12 md:py-16 lg:py-20 border-t border-neutral-200 dark:border-neutral-900 bg-white dark:bg-black ">
-      <div className="ml-8 mb-8 sm:mb-10 md:mb-12">
+      <div className="ml-8 flex flex-col justify-center items-center mb-8 sm:mb-10 md:mb-12">
         <div className="mb-4">
-          <Button variant="outline" size="sm" className="gap-2 bg-transparent">
-            <FaSmileBeam className="size-4" />
-            lovin&apos; it
-          </Button>
+          <TextShimmer className="text-orange-600 text-sm font-medium tracking-wide uppercase">
+            lovin'it
+          </TextShimmer>
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 sm:mb-4 text-balance">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 sm:mb-4 text-balance">
           What industry experts are saying ?
         </h2>
-        <p className="text-base sm:text-lg md:text-xl text-neutral-700 dark:text-neutral-300 max-w-2xl">
+        <p className="text-base sm:text-lg md:text-lg text-neutral-700 dark:text-neutral-300 max-w-2xl">
           Trusted by Professionals from Leading Tech Companies
         </p>
       </div>
