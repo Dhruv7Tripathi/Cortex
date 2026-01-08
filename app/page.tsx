@@ -17,7 +17,7 @@ export default function HomePage() {
         relative
         min-h-[calc(100vh-82px)]
         px-4 sm:px-6
-        
+
         md:mx-4 md:px-0
         md:border-l md:border-r md:border-neutral-200 md:dark:border-neutral-900
         
@@ -38,12 +38,12 @@ export default function HomePage() {
                 <p className="text-center dark:text-neutral-100 text-neutral-900 text-xs font-bold tracking-[0.2em] uppercase mb-12">
                   Trusted by fast growing startups
                 </p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white dark:bg-black border border-neutral-100 dark:border-neutral-900">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-12px bg-white dark:bg-black border border-neutral-100 dark:border-neutral-900">
                   {["Attention", "bill", "Hippocratic AI", "Replicate", "granola", "Primer", "Bridge", "incident.io"].map(
                     (brand) => (
                       <div
                         key={brand}
-                        className="bg-white dark:bg-black flex items-center justify-center p-8 grayscale opacity-50 hover:opacity-100 transition-opacity"
+                        className="bg-white dark:bg-black flex items-center justify-center p-14 grayscale opacity-50 hover:opacity-100 transition-opacity"
                       >
                         <span className="dark:text-white text-black font-bold text-lg">{brand}</span>
                       </div>

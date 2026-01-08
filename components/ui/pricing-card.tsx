@@ -31,7 +31,7 @@ export function PricingCard({ tier, paymentFrequency }: PricingCardProps) {
   return (
     <Card
       className={cn(
-        "relative flex flex-col bg-background text-foreground overflow-hidden transition-all duration-300",
+        "relative flex flex-col rounded-sm bg-background text-foreground overflow-hidden transition-all duration-300",
         // Small screens
         "gap-4 p-4 min-h-[400px]",
         // Medium screens  
