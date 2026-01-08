@@ -30,47 +30,50 @@ export default function Footer() {
         </div>
 
         {/* Product column */}
-        <div className="md:col-span-2 space-y-4">
-          <h4 className="text-zinc-500 font-medium mb-6">Product</h4>
-          <ul className="space-y-4">
-            {["Agent Builder", "Simulation", "Integrations", "Multi Agent", "Workflow API"].map((item) => (
-              <li key={item}>
-                <a href="#" className="text-zinc-400 hover:text-white transition-colors">
-                  {item}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <div className=" md:col-span-8 ml-24 px-12 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-8">
 
-        {/* Company column */}
-        <div className="md:col-span-2 space-y-4">
-          <h4 className="text-zinc-500 font-medium mb-6">Company</h4>
-          <ul className="space-y-4 text-sm">
-            {["Sign In", "About", "Contact", "Pricing", "Careers", "Docs", "Changelog", "Glossary"].map((item) => (
-              <li key={item}>
-                <a href="#" className="text-zinc-400 hover:text-white transition-colors">
-                  {item}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+          <div className="md:col-span-2 space-y-4">
+            <h4 className="text-zinc-500 font-medium mb-6">Product</h4>
+            <ul className="space-y-4">
+              {["Agent Builder", "Simulation", "Integrations", "Multi Agent", "Workflow API"].map((item) => (
+                <li key={item}>
+                  <a href="#" className="text-zinc-400 hover:text-white transition-colors">
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        {/* Legal column */}
-        <div className="md:col-span-2 space-y-4">
-          <h4 className="text-zinc-500 font-medium mb-6">Legal</h4>
-          <ul className="space-y-4">
-            {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
-              <li key={item}>
-                <a href="#" className="text-zinc-400 hover:text-white transition-colors">
-                  {item}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+          {/* Company column */}
+          <div className="md:col-span-2 space-y-4">
+            <h4 className="text-zinc-500 font-medium mb-6">Company</h4>
+            <ul className="space-y-4 text-sm">
+              {["Sign In", "About", "Contact", "Pricing", "Careers", "Docs", "Changelog", "Glossary"].map((item) => (
+                <li key={item}>
+                  <a href="#" className="text-zinc-400 hover:text-white transition-colors">
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
+          {/* Legal column */}
+          <div className="md:col-span-2 space-y-4">
+            <h4 className="text-zinc-500 font-medium mb-6">Legal</h4>
+            <ul className="space-y-4">
+              {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
+                <li key={item}>
+                  <a href="#" className="text-zinc-400 hover:text-white transition-colors">
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
         {/* Newsletter column */}
 
       </div>
