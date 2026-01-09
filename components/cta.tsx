@@ -17,7 +17,7 @@ const icons = [
 
 export default function CTASection() {
   return (
-    <section className="dark:bg-black bg-white border-t border-neutral-100 dark:border-neutral-900 py-32 relative overflow-hidden flex flex-col items-center justify-center">
+    <section className="dark:bg-black bg-white border-t border-neutral-300 dark:border-neutral-900 py-32 relative overflow-hidden flex flex-col items-center justify-center">
       {/* Orbital background */}
       <div className="absolute inset-0 flex items-center justify-center opacity-20">
         <div className="relative w-full aspect-square max-w-4xl flex items-center justify-center">

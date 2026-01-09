@@ -3,7 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-20 border-t border-zinc-900">
+    <footer className="bg-white dark:bg-black text-black dark:text-white py-20 border-t border-neutral-200 dark:border-neutral-800">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
         {/* Left column: Branding */}
         <div className="md:col-span-4 space-y-6">
@@ -20,11 +20,11 @@ export default function Footer() {
               />
               <h3 className="text-lg sm:text-xl font-bold text-black dark:text-white">Cortex</h3>
             </Link>
-            <p className="text-neutral-600 dark:text-neutral-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-neutral-800 dark:text-neutral-300 text-sm sm:text-base leading-relaxed">
               Cortex is a modern project management tool designed for high-performance teams. Built for speed and collaboration.
             </p>
           </div>
-          <Button className="bg-white text-black hover:bg-zinc-200 rounded-lg px-6 font-semibold">
+          <Button className="dark:bg-neutral-100 bg-neutral-900 text-white dark:text-black hover:bg-neutral-950 dark:hover:bg-neutral-50 rounded-lg px-6 font-semibold">
             Start building
           </Button>
         </div>
@@ -33,11 +33,11 @@ export default function Footer() {
         <div className=" md:col-span-8 ml-24 px-12 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-8">
 
           <div className="md:col-span-2 space-y-4">
-            <h4 className="text-zinc-500 font-medium mb-6">Product</h4>
+            <h4 className="text-neutral-500 font-medium mb-6">Product</h4>
             <ul className="space-y-4">
               {["Agent Builder", "Simulation", "Integrations", "Multi Agent", "Workflow API"].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-zinc-400 hover:text-white transition-colors">
+                  <a href="#" className="text-neutral-400 hover:text-white transition-colors">
                     {item}
                   </a>
                 </li>
@@ -47,11 +47,11 @@ export default function Footer() {
 
           {/* Company column */}
           <div className="md:col-span-2 space-y-4">
-            <h4 className="text-zinc-500 font-medium mb-6">Company</h4>
+            <h4 className="text-neutral-500 font-medium mb-6">Company</h4>
             <ul className="space-y-4 text-sm">
               {["Sign In", "About", "Contact", "Pricing", "Careers", "Docs", "Changelog", "Glossary"].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-zinc-400 hover:text-white transition-colors">
+                  <a href="#" className="text-neutral-400 hover:text-white transition-colors">
                     {item}
                   </a>
                 </li>
@@ -61,11 +61,11 @@ export default function Footer() {
 
           {/* Legal column */}
           <div className="md:col-span-2 space-y-4">
-            <h4 className="text-zinc-500 font-medium mb-6">Legal</h4>
+            <h4 className="text-neutral-500 font-medium mb-6">Legal</h4>
             <ul className="space-y-4">
               {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-zinc-400 hover:text-white transition-colors">
+                  <a href="#" className="text-neutral-400 hover:text-white transition-colors">
                     {item}
                   </a>
                 </li>
