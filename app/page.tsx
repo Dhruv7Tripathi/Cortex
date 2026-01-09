@@ -58,10 +58,10 @@ export default function HomePage() {
           <section>
             <BentoSection />
           </section>
-
+          {/* 
           <section>
             <IntegrationsSection />
-          </section>
+          </section> */}
 
           {/* Pricing Section */}
           <section>

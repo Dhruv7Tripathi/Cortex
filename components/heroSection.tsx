@@ -27,14 +27,14 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row gap-4 mb-12">
           <Button
             size="lg"
-            className="dark:bg-white bg-black dark:text-black text-white hover:bg-neutral-200 px-8 py-6 text-lg font-semibold rounded-full transition-all"
+            className="dark:bg-white bg-black dark:text-black text-white hover:bg-neutral-950 px-8 py-6 text-lg font-semibold rounded-full transition-all"
           >
             Start building
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="border-neutral-800 dark:text-white text-black dark:hover:bg-neutral-900 hover:bg-neutral-100 px-8 py-6 text-lg font-semibold rounded-full transition-all bg-transparent"
+            className="border-neutral-800 dark:text-white text-black dark:hover:bg-neutral-900 hover:bg-neutral-50 px-8 py-6 text-lg font-semibold rounded-full transition-all bg-transparent"
           >
             View pricing
           </Button>

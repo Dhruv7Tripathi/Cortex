@@ -17,7 +17,7 @@ const icons = [
 
 export default function CTASection() {
   return (
-    <section className="bg-black border-t-1 border-neutral-100 dark:border-neutral-900 py-32 relative overflow-hidden flex flex-col items-center justify-center">
+    <section className="dark:bg-black bg-white border-t border-neutral-100 dark:border-neutral-900 py-32 relative overflow-hidden flex flex-col items-center justify-center">
       {/* Orbital background */}
       <div className="absolute inset-0 flex items-center justify-center opacity-20">
         <div className="relative w-full aspect-square max-w-4xl flex items-center justify-center">
@@ -25,7 +25,7 @@ export default function CTASection() {
           {[1, 2, 3].map((circle) => (
             <div
               key={circle}
-              className="absolute border border-zinc-500 rounded-full"
+              className="absolute border dark:border-neutral-600 border-neutral-400 rounded-full"
               style={{
                 width: `${circle * 33}%`,
                 height: `${circle * 33}%`,
@@ -51,7 +51,7 @@ export default function CTASection() {
                 }}
               >
                 <div
-                  className={`bg-zinc-900/80 p-3 rounded-xl border border-zinc-800 backdrop-blur-sm shadow-lg ${color}`}
+                  className={`dark:bg-neutral-900/80 bg-neutral-100 p-3 rounded-xl border border-neutral-200 dark:border-neutral-800 backdrop-blur-sm shadow-lg ${color}`}
                   style={{
                     transform: `translateX(${radius}px)`,
                   }}
@@ -67,12 +67,12 @@ export default function CTASection() {
 
       {/* Content Overlay */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight mb-8 leading-[1.1]">
+        <h2 className="text-4xl md:text-6xl font-bold text-black dark:text-white tracking-tight mb-8 leading-[1.1]">
           Connect your Current Stack <br className="hidden md:block" /> and Start Automating
         </h2>
         <Button
           size="lg"
-          className="bg-white text-black hover:bg-zinc-200 px-10 py-7 text-lg font-semibold rounded-full shadow-2xl transition-all"
+          className="dark:bg-neutral-100 bg-neutral-900 text-white dark:text-black hover:bg-neutral-950:hover:bg-neutral-200 px-10 py-7 text-lg font-semibold rounded-full shadow-2xl transition-all"
         >
           Start Building for Free
         </Button>
