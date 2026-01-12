@@ -79,7 +79,7 @@ export const TIERS = [
 
 export function Pricing() {
   return (
-    <div className="justify-center flex flex-col py-8 sm:py-12 md:py-16 lg:py-20 border-t border-neutral-200 dark:border-neutral-900 bg-white dark:bg-black mt-8 ">
+    <div className="justify-center flex flex-col py-8 sm:py-12 md:py-16 lg:py-10 border-t border-neutral-200 dark:border-neutral-900 bg-white dark:bg-black mt-8 ">
       <div className="space-y-6 ml-8 mb-8 sm:mb-1 md:mb-3 lg:mb-6">
         <div className="flex flex-col justify-center items-center">
           <TextShimmer className="text-orange-600 text-sm font-medium tracking-wide uppercase">

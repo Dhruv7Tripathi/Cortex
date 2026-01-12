@@ -57,7 +57,7 @@ const HeroSection = () => {
           <div className="rounded-xl overflow-hidden border border-neutral-800 bg-[#fcfcfc] aspect-[16/10]">
             <Image
               src="/clean-dark-dashboard-with-sidebar-and-charts.jpg"
-              alt="Nodus Dashboard Preview"
+              alt="Cortex Dashboard Preview"
               width={1280}
               height={800}
               className="w-full h-full object-cover"
