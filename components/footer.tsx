@@ -3,7 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 export default function Footer() {
   return (
-    <footer className="bg-white dark:bg-black text-black dark:text-white py-20 border-t border-neutral-200 dark:border-neutral-800">
+    <footer className="bg-white dark:bg-black text-black dark:text-white py-20 border-t border-neutral-300 dark:border-neutral-800">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
         {/* Left column: Branding */}
         <div className="md:col-span-4 space-y-6">
@@ -37,7 +37,7 @@ export default function Footer() {
             <ul className="space-y-4">
               {["Agent Builder", "Simulation", "Integrations", "Multi Agent", "Workflow API"].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-neutral-400 hover:text-white transition-colors">
+                  <a href="#" className="text-neutral-900 dark:text-neutral-100 dark:hover:text-white hover:text-black transition-colors">
                     {item}
                   </a>
                 </li>
@@ -48,10 +48,10 @@ export default function Footer() {
           {/* Company column */}
           <div className="md:col-span-2 space-y-4">
             <h4 className="text-neutral-500 font-medium mb-6">Company</h4>
-            <ul className="space-y-4 text-sm">
-              {["Sign In", "About", "Contact", "Pricing", "Careers", "Docs", "Changelog", "Glossary"].map((item) => (
+            <ul className="space-y-2">
+              {["Sign In", "About", "Contact", "Pricing", "Docs",].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-neutral-400 hover:text-white transition-colors">
+                  <a href="#" className="text-neutral-900 dark:text-neutral-100 dark:hover:text-white hover:text-black transition-colors">
                     {item}
                   </a>
                 </li>
@@ -62,10 +62,10 @@ export default function Footer() {
           {/* Legal column */}
           <div className="md:col-span-2 space-y-4">
             <h4 className="text-neutral-500 font-medium mb-6">Legal</h4>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-neutral-400 hover:text-white transition-colors">
+                  <a href="#" className="text-neutral-900 dark:text-neutral-100 dark:hover:text-white hover:text-black transition-colors">
                     {item}
                   </a>
                 </li>

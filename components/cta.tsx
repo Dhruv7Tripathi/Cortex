@@ -17,9 +17,9 @@ const icons = [
 
 export default function CTASection() {
   return (
-    <section className="dark:bg-black bg-white border-t border-neutral-300 dark:border-neutral-900 py-32 relative overflow-hidden flex flex-col items-center justify-center">
+    <section className="dark:bg-black bg-white border-t border-neutral-300 dark:border-neutral-900 py-42 relative overflow-hidden flex flex-col items-center justify-center">
       {/* Orbital background */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-20">
+      <div className="absolute inset-0 border border-l ml-12  border-neutral-300 dark:border-neutral-900 flex items-center justify-center opacity-20">
         <div className="relative w-full aspect-square max-w-4xl flex items-center justify-center">
           {/* Concentric Circles */}
           {[1, 2, 3].map((circle) => (
@@ -51,7 +51,7 @@ export default function CTASection() {
                 }}
               >
                 <div
-                  className={`dark:bg-neutral-900/80 bg-neutral-100 p-3 rounded-xl border border-neutral-200 dark:border-neutral-800 backdrop-blur-sm shadow-lg ${color}`}
+                  className={`dark:bg-neutral-900/80 bg-neutral-200 p-3 rounded-xl border border-neutral-300 dark:border-neutral-800 backdrop-blur-sm shadow-lg ${color}`}
                   style={{
                     transform: `translateX(${radius}px)`,
                   }}
