@@ -36,8 +36,8 @@ const Navbar2 = () => {
                 aria-label="home"
                 className="flex items-center space-x-2">
                 <Image
-                  src="/logo.jpg"
-                  alt="Bloggify Logo"
+                  src="/logo.png"
+                  alt="Cortex Logo"
                   width={40}
                   height={40}
                   className="h-10 w-10 rounded-full  object-cover lg:h-10 lg:w-10 md:h-10 md:w-10 sm:h-8 sm:w-8"
@@ -45,7 +45,7 @@ const Navbar2 = () => {
                 />
               </Link>
 
-              <h3 className="text-xl font-bold ml-4 mt-1 text-black dark:text-white">Bloggify</h3>
+              <h3 className="text-xl font-bold ml-4 mt-1 text-black dark:text-white">Cortex</h3>
 
               <button
                 onClick={() => setMenuState(!menuState)}
