@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/navbar";
+import ScrollNavbarWrapper from "@/components/navbar-wrapper";
 import HeroSection from "@/components/heroSection";
 import Footer from "@/components/footer";
 import FAQ from "@/components/faq-section";
@@ -10,7 +10,7 @@ import CTASection from "@/components/cta";
 export default function HomePage() {
   return (
     <div className="bg-white dark:bg-black text-gray-900 dark:text-gray-100">
-      <Navbar />
+      <ScrollNavbarWrapper />
 
       {/* Main Content Container */}
       <div className={`

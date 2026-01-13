@@ -1,37 +1,37 @@
 "use client"
 
 import { useRef, useState, useEffect } from "react"
-import { motion } from "framer-motion"
+// import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Themetoggle } from "./ui/themetoggle"
 import Image from "next/image"
 import { ChevronDown, Menu } from "lucide-react"
-import { SiGithub } from "react-icons/si"
+// import { SiGithub } from "react-icons/si"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
 const products = [
   {
-    title: "Linear Temp — UI Template",
+    title: "Cortex Temp — UI Template",
     href: "#uitemplate",
     src: "https://layrdui.in/products/linear.png",
     description: "A clean, responsive Next.js + Tailwind template designed for fast product launches and consistent UI.",
   },
   {
-    title: "Linear Temp — Docs Kit",
+    title: "Cortex Temp — Docs Kit",
     href: "#docskit",
     src: "https://layrdui.in/products/polar-auth.png",
     description: "Documentation and component guidelines for shipping polished docs, changelogs, and marketing pages quickly.",
   },
   {
-    title: "Linear Temp — Blog Starter",
+    title: "Cortex Temp — Blog Starter",
     href: "#blogstarter",
     src: "https://layrdui.in/products/linear1.png",
     description: "Content-first blog layout with MDX support, SEO optimizations, and ready-to-use post templates.",
   },
   {
-    title: "Linear Temp — Dashboard",
+    title: "Cortex Temp — Dashboard",
     href: "#dashboard",
     src: "https://layrdui.in/products/linear2.png",
     description: "Admin and analytics dashboard patterns with reusable components for monitoring and insights.",

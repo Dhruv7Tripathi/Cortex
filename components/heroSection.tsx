@@ -56,7 +56,7 @@ const HeroSection = () => {
         <div className="rounded-2xl border border-neutral-800 bg-neutral-950/50 p-2 shadow-2xl shadow-orange-950/20">
           <div className="rounded-xl overflow-hidden border border-neutral-800 bg-[#fcfcfc] aspect-[16/10]">
             <Image
-              src="/clean-dark-dashboard-with-sidebar-and-charts.jpg"
+              src="/dashboard.png"
               alt="Cortex Dashboard Preview"
               width={1280}
               height={800}
