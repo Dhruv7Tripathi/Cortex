@@ -7,9 +7,9 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { Themetoggle } from './ui/themetoggle';
 const menuItems = [
-  { name: 'Home', href: '/' },
-  { name: 'Posts', href: '/#posts' },
-  { name: 'write', href: '/#write' },
+  { name: 'Products', href: '/' },
+  { name: 'Pricing', href: '/#pricing' },
+  { name: 'FAQs', href: '/#faqs' },
 ]
 
 const Navbar2 = () => {
@@ -40,7 +40,7 @@ const Navbar2 = () => {
                   alt="Cortex Logo"
                   width={40}
                   height={40}
-                  className="h-10 w-10 rounded-full  object-cover lg:h-10 lg:w-10 md:h-10 md:w-10 sm:h-8 sm:w-8"
+                  className="h-10 w-10 rounded-full dark:invert object-cover lg:h-10 lg:w-10 md:h-10 md:w-10 sm:h-8 sm:w-8"
                   priority
                 />
               </Link>
@@ -98,7 +98,7 @@ const Navbar2 = () => {
                   size="sm"
                   className={cn(isScrolled && 'bg-white text-black font-semibold')}>
                   <Link href="/signin">
-                    <span >SignIn</span>
+                    <span >Start Building</span>
                   </Link>
 
                 </Button>
