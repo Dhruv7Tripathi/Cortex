@@ -33,7 +33,7 @@ export default function HomePage() {
             <HeroSection />
           </section>
           <section>
-            <div className="border-t border-neutral-100 dark:border-neutral-900 bg-white dark:bg-black py-20">
+            <div className="border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black py-20">
               <div className=" ">
                 <p className="text-center dark:text-neutral-100 text-neutral-900 text-xs font-bold tracking-[0.2em] uppercase mb-12">
                   Trusted by fast growing startups

@@ -8,7 +8,7 @@ const icons = [
   { Icon: Apple, color: "text-white" },
   { Icon: Github, color: "text-white" },
   { Icon: Slack, color: "text-white" },
-  { Icon: Twitter, color: "text-black" },
+  { Icon: Twitter, color: "text-blue-700" },
   { Icon: MessageCircle, color: "text-blue-500" },
   { Icon: Cloud, color: "text-white" },
   { Icon: Globe, color: "text-white" },
@@ -51,12 +51,12 @@ export default function CTASection() {
                 }}
               >
                 <div
-                  className={`dark:bg-neutral-900/80 bg-neutral-200 p-3 rounded-xl border border-neutral-300 dark:border-neutral-800 backdrop-blur-sm shadow-lg ${color}`}
+                  className={`dark:bg-black dark:text-neutral-50 bg-neutral-950 p-3 rounded-xl border border-neutral-300 dark:border-neutral-800 backdrop-blur-sm shadow-lg ${color}`}
                   style={{
                     transform: `translateX(${radius}px)`,
                   }}
                 >
-                  <Icon size={24} />
+                  <Icon size={28} />
                 </div>
               </motion.div>
             )

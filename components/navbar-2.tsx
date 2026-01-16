@@ -28,7 +28,7 @@ const Navbar2 = () => {
       <nav
         data-state={menuState && 'active'}
         className="fixed z-20 w-full px-2 group">
-        <div className={cn('mx-auto mt-2 max-w-[95rem] px-6 transition-all duration-300 lg:px-12', isScrolled && 'bg-background/50 max-w-7xl rounded-2xl border backdrop-blur-lg lg:px-5')}>
+        <div className={cn('mx-auto mt-2 bg-background/50 max-w-7xl rounded-2xl border backdrop-blur-lg lg:px-5 px-6 transition-all duration-300 ', isScrolled && 'bg-background/50 max-w-7xl rounded-2xl border backdrop-blur-lg lg:px-5')}>
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
             <div className="flex w-full justify-between lg:w-auto">
               <Link
@@ -40,7 +40,7 @@ const Navbar2 = () => {
                   alt="Cortex Logo"
                   width={40}
                   height={40}
-                  className="h-10 w-10 rounded-full dark:invert object-cover lg:h-10 lg:w-10 md:h-10 md:w-10 sm:h-8 sm:w-8"
+                  className="h-10 w-10 rounded-full dark:invert-0 invert object-cover lg:h-10 lg:w-10 md:h-10 md:w-10 sm:h-8 sm:w-8"
                   priority
                 />
               </Link>
@@ -98,7 +98,9 @@ const Navbar2 = () => {
                   size="sm"
                   className={cn(isScrolled && 'bg-white text-black font-semibold')}>
                   <Link href="/signin">
-                    <span >Start Building</span>
+                    <button className="dark:bg-neutral-100 font-semibold ring ring-neutral-300 dark:ring-neutral-600 bg-neutral-900 text-neutral-50 dark:text-neutral-900 px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-3 rounded-lg hover:bg-white dark:hover:bg-white dark:hover:text-black  hover:text-black border border-neutral-200 dark:border-neutral-950 hover:border-white dark:hover:border-black transition-colors duration-300 text-xs sm:text-sm">
+                      Start Building
+                    </button>
                   </Link>
 
                 </Button>
