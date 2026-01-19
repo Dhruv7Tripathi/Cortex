@@ -109,9 +109,9 @@ export function TestimonialsSection() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 px-4 sm:px-6 lg:px-8  mx-auto sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+      <div className="grid grid-cols-1   mx-auto sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
         {testimonials.map((testimonial) => (
-          <Card key={testimonial.id} className="p-4 bg-neutral-50 dark:bg-neutral-950 rounded-sm border border-neutral-100 dark:border-neutral-900 sm:p-5 md:p-6 h-full flex flex-col">
+          <Card key={testimonial.id} className="p-4 bg-neutral-50 dark:bg-neutral-950  border border-neutral-100 dark:border-neutral-900 sm:p-5 md:p-6 h-full flex flex-col">
             <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
               {testimonial.logo}
               <span className="font-semibold text-foreground text-base sm:text-lg">{testimonial.company}</span>

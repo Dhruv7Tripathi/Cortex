@@ -31,7 +31,7 @@ export function PricingCard({ tier, paymentFrequency }: PricingCardProps) {
   return (
     <Card
       className={cn(
-        "relative flex flex-col rounded-sm bg-background text-foreground overflow-hidden transition-all duration-300",
+        "relative flex flex-col  bg-background text-foreground overflow-hidden transition-all duration-300",
         // Small screens
         "gap-4 p-4 min-h-[400px]",
         // Medium screens  
@@ -39,7 +39,7 @@ export function PricingCard({ tier, paymentFrequency }: PricingCardProps) {
         // Large screens
         "lg:gap-8 lg:p-6 lg:min-h-[500px]",
         // Highlighted/Popular styling
-        isHighlighted && "border-2 border-primary shadow-lg scale-105",
+        isHighlighted && "border border-primary  scale-105",
         // isPopular && "ring-2 ring-primary/20"
       )}
     >
