@@ -79,7 +79,8 @@ export const TIERS = [
 
 export function Pricing() {
   return (
-    <div className="relative
+    <div className="justify-center flex flex-col  border-t border-neutral-200 dark:border-neutral-900 bg-white dark:bg-black mt-8 ">
+      <div className="relative
         min-h-[calc(100vh-82px)]
         px-4 sm:px-6
 
@@ -89,9 +90,8 @@ export function Pricing() {
         lg:mx-8 xl:mx-28
         lg:border-l lg:border-r lg:border-neutral-200 lg:dark:border-neutral-900">
 
-      <div className="justify-center flex flex-col py-8 sm:py-12 md:py-16 lg:py-10 border-t border-neutral-200 dark:border-neutral-900 bg-white dark:bg-black mt-8 ">
-        <div className="space-y-6 ml-8 mb-8 sm:mb-1 md:mb-3 lg:mb-6">
-          <div className="flex flex-col justify-center items-center">
+        <div className=" ml-8 mb-8 sm:mb-1 md:mb-3 lg:mb-6">
+          <div className="flex mt-8 flex-col justify-center items-center">
             <TextShimmer className="text-orange-600 text-sm font-medium tracking-wide uppercase">
               Spenders lounge
             </TextShimmer>

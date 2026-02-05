@@ -4,8 +4,6 @@ import type React from "react"
 
 import { useMemo } from "react"
 import { cn } from "@/lib/utils"
-import { TbLayoutGrid } from 'react-icons/tb';
-import { Button } from "./ui/button"
 import EventCard from "./ui/event-card"
 import GlideSelect from "./ui/glide-select";
 import TextShimmer from "./ui/text-shimmer";
@@ -186,7 +184,9 @@ const steps = [
 
 export default function BentoSection() {
   return (
-    <div className="relative
+    <div className="border-t">
+
+      <div className="relative
         min-h-[calc(100vh-82px)]
         px-4 sm:px-6
 
@@ -195,32 +195,33 @@ export default function BentoSection() {
         
         lg:mx-8 xl:mx-28
         lg:border-l lg:border-r lg:border-neutral-200 lg:dark:border-neutral-900">
-      <SectionIntro />
+        <SectionIntro />
 
-      {/* Features grid */}
-      <div className="mt-10 grid grid-cols-1 divide-y divide-border overflow-hidden  border border-border sm:mt-14 md:grid-cols-3 md:divide-x md:divide-y-0">
-        <FeatureColumn eyebrow="Unified Scheduling" title="Unified Scheduling">
-          Keep all your appointments and events in sync with seamless cross-platform calendar connectivity.
-          <TasksCard />
-        </FeatureColumn>
+        <div className="mt-10 grid grid-cols-1 divide-y divide-border overflow-hidden  border border-border sm:mt-14 md:grid-cols-3 md:divide-x md:divide-y-0">
+          {/* Features grid */}
+          <FeatureColumn eyebrow="Unified Scheduling" title="Unified Scheduling">
+            Keep all your appointments and events in sync with seamless cross-platform calendar connectivity.
+            <TasksCard />
+          </FeatureColumn>
 
-        <FeatureColumn
-          eyebrow="Insightful Performance"
-          title="Insightful Performance"
-          className="border-t border-border md:border-t-0"
-        >
-          Get clear, real-time analytics tracking your progress, key milestones, focus hours, and completed tasks.
-          <MeetingCard />
-        </FeatureColumn>
+          <FeatureColumn
+            eyebrow="Insightful Performance"
+            title="Insightful Performance"
+            className="border-t border-border md:border-t-0"
+          >
+            Get clear, real-time analytics tracking your progress, key milestones, focus hours, and completed tasks.
+            <MeetingCard />
+          </FeatureColumn>
 
-        <FeatureColumn
-          eyebrow="Effortless Tool Integrations"
-          title="Effortless Tool Integrations"
-          className="border-t border-border md:border-t-0"
-        >
-          Link your favorite apps and services to streamline work without switching between platforms.
-          <AnalyticsCard />
-        </FeatureColumn>
+          <FeatureColumn
+            eyebrow="Effortless Tool Integrations"
+            title="Effortless Tool Integrations"
+            className="border-t border-border md:border-t-0"
+          >
+            Link your favorite apps and services to streamline work without switching between platforms.
+            <AnalyticsCard />
+          </FeatureColumn>
+        </div>
       </div>
     </div>
   )

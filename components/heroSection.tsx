@@ -5,9 +5,17 @@ import { Button } from "@/components/ui/button"
 import TextShimmer from "./ui/text-shimmer"
 const HeroSection = () => {
   return (
-    <div className="dark:bg-black bg-white dark:text-white text-black min-h-screen font-sans selection:bg-orange-500/30">
+    <div className="dark:bg-black relative
+        min-h-screen
+        px-4 sm:px-6
+
+        md:mx-4 md:px-0
+        md:border-l md:border-r md:border-neutral-200 md:dark:border-neutral-900
+        
+        lg:mx-8 xl:mx-28
+        lg:border-l lg:border-r lg:border-neutral-200 lg:dark:border-neutral-900 bg-white dark:text-white text-black  font-sans selection:bg-orange-500/30">
       <motion.section
-        className="flex flex-col items-center pt-20 pb-16 px-4 text-center"
+        className="flex flex-col  items-center pt-20 pb-16 px-4 text-center"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
