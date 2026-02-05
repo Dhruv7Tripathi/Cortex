@@ -23,6 +23,8 @@ const Navbar2 = () => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+
   return (
     <header>
       <nav
@@ -92,18 +94,18 @@ const Navbar2 = () => {
                 )}
               >
                 <Themetoggle />
-                <Button
+                {/* <Button
                   asChild
                   // variant="outline"
                   size="sm"
-                  className={cn()}>
-                  <Link href="/signin">
-                    <button className="dark:bg-neutral-100 font-semibold ring ring-neutral-300 dark:ring-neutral-600 bg-neutral-900 text-neutral-50 dark:text-neutral-900 px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-3 rounded-lg  dark:hover:bg-white dark:hover:text-black  border border-neutral-200 dark:border-neutral-950 hover:border-white dark:hover:border-black transition-colors duration-300 text-xs sm:text-sm">
-                      Start Building
-                    </button>
-                  </Link>
+                  className={cn()}>*/}
+                <Link href="/signin">
+                  <button className="dark:bg-neutral-100 font-semibold ring ring-neutral-300 dark:ring-neutral-600 bg-neutral-900 text-neutral-50 dark:text-neutral-900 px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-3 rounded-lg  dark:hover:bg-white dark:hover:text-black  border border-neutral-200 dark:border-neutral-950 hover:border-white dark:hover:border-black transition-colors duration-300 text-xs sm:text-sm">
+                    Start Building
+                  </button>
+                </Link>
 
-                </Button>
+                {/* </Button> */}
               </div>
             </div>
           </div>

@@ -5,27 +5,27 @@ import { Button } from "@/components/ui/button"
 import { Apple, Github, Slack, Twitter, MessageCircle, Cloud, Globe, Share2 } from "lucide-react"
 
 const icons = [
-  { Icon: Apple, color: "text-white" },
-  { Icon: Github, color: "text-white" },
-  { Icon: Slack, color: "text-white" },
-  { Icon: Twitter, color: "text-blue-700" },
-  { Icon: MessageCircle, color: "text-blue-500" },
-  { Icon: Cloud, color: "text-white" },
-  { Icon: Globe, color: "text-white" },
-  { Icon: Share2, color: "text-white" },
+  { Icon: Apple, color: "text-neutral-900 dark:text-white" },
+  { Icon: Github, color: "text-neutral-800 dark:text-neutral-100" },
+  { Icon: Slack, color: "text-[#4A154B]" },
+  { Icon: Twitter, color: "text-[#1DA1F2]" },
+  { Icon: MessageCircle, color: "text-[#22C55E]" },
+  { Icon: Cloud, color: "text-[#38BDF8]" },
+  { Icon: Globe, color: "text-[#A855F7]" },
+  { Icon: Share2, color: "text-[#F97316]" },
 ]
 
 export default function CTASection() {
   return (
-    <section className="dark:bg-black bg-white border-t border-neutral-300 dark:border-neutral-900 py-42 relative overflow-hidden flex flex-col items-center justify-center">
+    <section className="dark:bg-black bg-white border-t border-neutral-300 dark:border-neutral-800 py-42 relative overflow-hidden flex flex-col items-center justify-center">
       {/* Orbital background */}
-      <div className="absolute inset-0 border border-l ml-12  border-neutral-300 dark:border-neutral-900 flex items-center justify-center opacity-20">
+      <div className="absolute inset-0 border border-l border-r mr-28 ml-28  border-neutral-300 dark:border-neutral-900 flex items-center justify-center ">
         <div className="relative w-full aspect-square max-w-4xl flex items-center justify-center">
           {/* Concentric Circles */}
           {[1, 2, 3].map((circle) => (
             <div
               key={circle}
-              className="absolute border dark:border-neutral-600 border-neutral-400 rounded-full"
+              className="absolute border dark:border-neutral-800 border-neutral-200 rounded-full"
               style={{
                 width: `${circle * 33}%`,
                 height: `${circle * 33}%`,
