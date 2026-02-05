@@ -13,7 +13,7 @@ export default function HomePage() {
       <ScrollNavbarWrapper />
 
       {/* Main Content Container */}
-      <div className={`
+      {/* <div className={`
         relative
         min-h-[calc(100vh-82px)]
         px-4 sm:px-6
@@ -23,62 +23,62 @@ export default function HomePage() {
         
         lg:mx-8 xl:mx-28
         lg:border-l lg:border-r lg:border-neutral-200 lg:dark:border-neutral-900
-      `}>
+      `}> */}
 
-        {/* Content Sections */}
-        <div className="space-y-12 sm:space-y-16 lg:space-y-2">
+      {/* Content Sections */}
+      <div className="space-y-12 sm:space-y-16 lg:space-y-2">
 
-          {/* Hero Section */}
-          <section className="pt-8 sm:pt-12 lg:pt-16">
-            <HeroSection />
-          </section>
-          <section>
-            <div className="border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black py-20">
-              <div className=" ">
-                <p className="text-center dark:text-neutral-100 text-neutral-900 text-xs font-bold tracking-[0.2em] uppercase mb-12">
-                  Trusted by fast growing startups
-                </p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-12px bg-white dark:bg-black border border-neutral-100 dark:border-neutral-900">
-                  {["Attention", "bill", "Hippocratic AI", "Replicate", "granola", "Primer", "Bridge", "incident.io"].map(
-                    (brand) => (
-                      <div
-                        key={brand}
-                        className="bg-white dark:bg-black flex items-center justify-center p-14 grayscale opacity-50 hover:opacity-100 transition-opacity"
-                      >
-                        <span className="dark:text-white text-black font-bold text-lg">{brand}</span>
-                      </div>
-                    ),
-                  )}
-                </div>
+        {/* Hero Section */}
+        <section className="pt-8 sm:pt-12 lg:pt-16">
+          <HeroSection />
+        </section>
+        <section>
+          <div className="border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black py-20">
+            <div className=" ">
+              <p className="text-center dark:text-neutral-100 text-neutral-900 text-xs font-bold tracking-[0.2em] uppercase mb-12">
+                Trusted by fast growing startups
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-12px bg-white dark:bg-black border border-neutral-100 dark:border-neutral-900">
+                {["Attention", "Bill", "Hippocratic AI", "Replicate", "Granola", "Primer", "Bridge", "incident.io"].map(
+                  (brand) => (
+                    <div
+                      key={brand}
+                      className="bg-white dark:bg-black flex items-center justify-center p-14 grayscale opacity-50 hover:opacity-100 transition-opacity"
+                    >
+                      <span className="dark:text-white text-black font-bold text-lg">{brand}</span>
+                    </div>
+                  ),
+                )}
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Bento Grid Section */}
-          <section>
-            <BentoSection />
-          </section>
-          {/* 
+        {/* Bento Grid Section */}
+        <section>
+          <BentoSection />
+        </section>
+        {/* 
           <section>
             <IntegrationsSection />
           </section> */}
 
-          {/* Pricing Section */}
-          <section>
-            <Pricing />
-          </section>
+        {/* Pricing Section */}
+        <section>
+          <Pricing />
+        </section>
 
-          {/* Testimonials Section */}
-          <section>
-            <TestimonialsSection />
-          </section>
+        {/* Testimonials Section */}
+        <section>
+          <TestimonialsSection />
+        </section>
 
-          {/* FAQ Section */}
-          <section>
-            <FAQ />
-          </section>
+        {/* FAQ Section */}
+        <section>
+          <FAQ />
+        </section>
 
-        </div>
+        {/* </div> */}
       </div>
       <section >
         <CTASection />

@@ -186,7 +186,15 @@ const steps = [
 
 export default function BentoSection() {
   return (
-    <div className="">
+    <div className="relative
+        min-h-[calc(100vh-82px)]
+        px-4 sm:px-6
+
+        md:mx-4 md:px-0
+        md:border-l md:border-r md:border-neutral-200 md:dark:border-neutral-900
+        
+        lg:mx-8 xl:mx-28
+        lg:border-l lg:border-r lg:border-neutral-200 lg:dark:border-neutral-900">
       <SectionIntro />
 
       {/* Features grid */}

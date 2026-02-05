@@ -94,48 +94,59 @@ const testimonials: Testimonial[] = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-8 sm:py-12 md:py-16 lg:py-20 border-t border-neutral-200 dark:border-neutral-900 bg-white dark:bg-black ">
-      <div className="ml-8 flex flex-col justify-center items-center mb-8 sm:mb-10 md:mb-12">
-        <div className="mb-4">
-          <TextShimmer className="text-orange-600 text-sm font-medium tracking-wide uppercase">
-            lovin'it
-          </TextShimmer>
+    <section className="border-t border-neutral-200 dark:border-neutral-900 bg-white dark:bg-black ">
+      <div className="relative
+        min-h-[calc(100vh-82px)]
+        px-4 sm:px-6
+
+        md:mx-4 md:px-0
+        md:border-l md:border-r md:border-neutral-200 md:dark:border-neutral-900
+        
+        lg:mx-8 xl:mx-28
+        lg:border-l lg:border-r lg:border-neutral-200 lg:dark:border-neutral-900">
+        <div className="ml-8 flex flex-col justify-center items-center mb-8 sm:mb-10 md:mb-12">
+          <div className="mb-4 mt-8">
+            <TextShimmer className="text-orange-600 text-sm font-medium tracking-wide uppercase">
+              lovin'it
+
+            </TextShimmer>
+          </div>
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 sm:mb-4 text-balance">
+            What industry experts are saying ?
+          </h2>
+          <p className="text-base sm:text-lg md:text-lg text-neutral-700 dark:text-neutral-300 max-w-2xl">
+            Trusted by Professionals from Leading Tech Companies
+          </p>
         </div>
-        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 sm:mb-4 text-balance">
-          What industry experts are saying ?
-        </h2>
-        <p className="text-base sm:text-lg md:text-lg text-neutral-700 dark:text-neutral-300 max-w-2xl">
-          Trusted by Professionals from Leading Tech Companies
-        </p>
-      </div>
 
-      <div className="grid grid-cols-1   mx-auto sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
-        {testimonials.map((testimonial) => (
-          <Card key={testimonial.id} className="p-4 bg-neutral-50 dark:bg-neutral-950  border border-neutral-100 dark:border-neutral-900 sm:p-5 md:p-6 h-full flex flex-col">
-            <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-              {testimonial.logo}
-              <span className="font-semibold text-foreground text-base sm:text-lg">{testimonial.company}</span>
-            </div>
-
-            <blockquote className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed sm:leading-relaxed md:leading-loose mb-4 sm:mb-5 md:mb-6 flex-grow">
-              {testimonial.quote}
-            </blockquote>
-
-            <div className="flex items-center gap-2 sm:gap-3 mt-auto">
-              <Image
-                src={testimonial.author.avatar || "/placeholder.svg"}
-                alt={testimonial.author.name}
-                width={32}
-                height={32}
-                className="rounded-full object-cover flex-shrink-0 sm:w-10 sm:h-10"
-              />
-              <div>
-                <div className="font-medium text-neutral-900 dark:text-neutral-100 text-sm sm:text-base">{testimonial.author.name}</div>
-                <div className="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300">{testimonial.author.title}</div>
+        <div className="grid grid-cols-1   mx-auto sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+          {testimonials.map((testimonial) => (
+            <Card key={testimonial.id} className="p-4 bg-neutral-50 dark:bg-neutral-950  border border-neutral-100 dark:border-neutral-900 sm:p-5 md:p-6 h-full flex flex-col">
+              <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                {testimonial.logo}
+                <span className="font-semibold text-foreground text-base sm:text-lg">{testimonial.company}</span>
               </div>
-            </div>
-          </Card>
-        ))}
+
+              <blockquote className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed sm:leading-relaxed md:leading-loose mb-4 sm:mb-5 md:mb-6 flex-grow">
+                {testimonial.quote}
+              </blockquote>
+
+              <div className="flex items-center gap-2 sm:gap-3 mt-auto">
+                <Image
+                  src={testimonial.author.avatar || "/placeholder.svg"}
+                  alt={testimonial.author.name}
+                  width={32}
+                  height={32}
+                  className="rounded-full object-cover flex-shrink-0 sm:w-10 sm:h-10"
+                />
+                <div>
+                  <div className="font-medium text-neutral-900 dark:text-neutral-100 text-sm sm:text-base">{testimonial.author.name}</div>
+                  <div className="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300">{testimonial.author.title}</div>
+                </div>
+              </div>
+            </Card>
+          ))}
+        </div>
       </div>
     </section>
   )

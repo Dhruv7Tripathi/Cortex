@@ -79,23 +79,34 @@ export const TIERS = [
 
 export function Pricing() {
   return (
-    <div className="justify-center flex flex-col py-8 sm:py-12 md:py-16 lg:py-10 border-t border-neutral-200 dark:border-neutral-900 bg-white dark:bg-black mt-8 ">
-      <div className="space-y-6 ml-8 mb-8 sm:mb-1 md:mb-3 lg:mb-6">
-        <div className="flex flex-col justify-center items-center">
-          <TextShimmer className="text-orange-600 text-sm font-medium tracking-wide uppercase">
-            Spenders lounge
-          </TextShimmer>
+    <div className="relative
+        min-h-[calc(100vh-82px)]
+        px-4 sm:px-6
+
+        md:mx-4 md:px-0
+        md:border-l md:border-r md:border-neutral-200 md:dark:border-neutral-900
+        
+        lg:mx-8 xl:mx-28
+        lg:border-l lg:border-r lg:border-neutral-200 lg:dark:border-neutral-900">
+
+      <div className="justify-center flex flex-col py-8 sm:py-12 md:py-16 lg:py-10 border-t border-neutral-200 dark:border-neutral-900 bg-white dark:bg-black mt-8 ">
+        <div className="space-y-6 ml-8 mb-8 sm:mb-1 md:mb-3 lg:mb-6">
+          <div className="flex flex-col justify-center items-center">
+            <TextShimmer className="text-orange-600 text-sm font-medium tracking-wide uppercase">
+              Spenders lounge
+            </TextShimmer>
+          </div>
+          <div className="space-y-4 flex flex-col justify-center items-center">
+            <h1 className="text-4xl font-medium md:text-4xl">Pricing for teams of all sizes</h1>
+            <p className="text-neutral-700 dark:text-neutral-300">Choose the best plan for your needs</p>
+          </div>
         </div>
-        <div className="space-y-4 flex flex-col justify-center items-center">
-          <h1 className="text-4xl font-medium md:text-4xl">Pricing for teams of all sizes</h1>
-          <p className="text-neutral-700 dark:text-neutral-300">Choose the best plan for your needs</p>
+        <div className="">
+          <PricingSection
+            frequencies={PAYMENT_FREQUENCIES}
+            tiers={TIERS}
+          />
         </div>
-      </div>
-      <div className="">
-        <PricingSection
-          frequencies={PAYMENT_FREQUENCIES}
-          tiers={TIERS}
-        />
       </div>
     </div>
   );
