@@ -6,11 +6,12 @@ import { Pricing } from "@/components/pricing";
 import { TestimonialsSection } from "@/components/testimonial-section";
 import BentoSection from "@/components/bento-grid";
 import CTASection from "@/components/cta";
+
 export default function HomePage() {
   return (
     <div className="bg-white dark:bg-black text-gray-900 dark:text-gray-100">
       <ScrollNavbarWrapper />
-      <div className="space-y-12 sm:space-y-16 lg:space-y-2">
+      <div className="">
         <section className="pt-8 sm:pt-12 lg:pt-16">
           <HeroSection />
         </section>
