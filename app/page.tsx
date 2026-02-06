@@ -6,29 +6,11 @@ import { Pricing } from "@/components/pricing";
 import { TestimonialsSection } from "@/components/testimonial-section";
 import BentoSection from "@/components/bento-grid";
 import CTASection from "@/components/cta";
-// import IntegrationsSection from "@/components/integration-section";
 export default function HomePage() {
   return (
     <div className="bg-white dark:bg-black text-gray-900 dark:text-gray-100">
       <ScrollNavbarWrapper />
-
-      {/* Main Content Container */}
-      {/* <div className={`
-        relative
-        min-h-[calc(100vh-82px)]
-        px-4 sm:px-6
-
-        md:mx-4 md:px-0
-        md:border-l md:border-r md:border-neutral-200 md:dark:border-neutral-900
-        
-        lg:mx-8 xl:mx-28
-        lg:border-l lg:border-r lg:border-neutral-200 lg:dark:border-neutral-900
-      `}> */}
-
-      {/* Content Sections */}
       <div className="space-y-12 sm:space-y-16 lg:space-y-2">
-
-        {/* Hero Section */}
         <section className="pt-8 sm:pt-12 lg:pt-16">
           <HeroSection />
         </section>
@@ -77,12 +59,6 @@ export default function HomePage() {
         <section>
           <BentoSection />
         </section>
-        {/* 
-          <section>
-            <IntegrationsSection />
-          </section> */}
-
-        {/* Pricing Section */}
         <section>
           <Pricing />
         </section>

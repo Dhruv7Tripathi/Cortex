@@ -187,7 +187,6 @@ export default function BentoSection() {
     <div className="border-t">
 
       <div className="relative
-        min-h-[calc(100vh-82px)]
         px-4 sm:px-6
 
         md:mx-4 md:px-0

@@ -39,46 +39,7 @@ const products = [
 export const Navbar = () => {
   const [, setIsProductOpen] = useState(false)
   const [isMobileOpen, setIsMobileOpen] = useState(false)
-  // const dropdownRef = useRef<HTMLDivElement | null>(null)
   const buttonRef = useRef<HTMLButtonElement | null>(null)
-
-  // useEffect(() => {
-  //   const handleMouseMove = (e: MouseEvent) => {
-  //     if (!isProductOpen) return
-
-  //     const dropdown = dropdownRef.current
-  //     const button = buttonRef.current
-
-  //     if (!dropdown || !button) return
-
-  //     const { clientX, clientY } = e
-  //     const dropdownBounds = dropdown.getBoundingClientRect()
-  //     const buttonBounds = button.getBoundingClientRect()
-
-  //     const bufferZone = 20
-
-  //     const isOverButton =
-  //       clientX >= buttonBounds.left &&
-  //       clientX <= buttonBounds.right &&
-  //       clientY >= buttonBounds.top &&
-  //       clientY <= buttonBounds.bottom + bufferZone
-
-  //     const isOverDropdown =
-  //       clientX >= dropdownBounds.left &&
-  //       clientX <= dropdownBounds.right &&
-  //       clientY >= dropdownBounds.top - bufferZone &&
-  //       clientY <= dropdownBounds.bottom
-
-  //     if (!isOverButton && !isOverDropdown) {
-  //       setIsProductOpen(false)
-  //     }
-  //   }
-
-  //   if (isProductOpen) {
-  //     window.addEventListener("mousemove", handleMouseMove)
-  //     return () => window.removeEventListener("mousemove", handleMouseMove)
-  //   }
-  // }, [isProductOpen])
 
   return (
     <nav
@@ -87,7 +48,7 @@ export const Navbar = () => {
       )}
     >
 
-      <div className="max-w-7xl mx-auto grid grid-cols-3 items-center px-3 sm:px-4 md:px-6 lg:px-8 py-2.5 sm:py-3">
+      <div className="max-w-7xl mx-auto grid grid-cols-3 items-center py-2.5 sm:py-4">
         {/* Left: Logo and Nav */}
         <div className="flex items-center space-x-2 sm:space-x-4">
           <Link href="/" className="flex space-x-1.5 sm:space-x-2 items-center">
@@ -111,44 +72,7 @@ export const Navbar = () => {
               className="flex items-center gap-1 font-semibold hover:bg-neutral-100 py-2 px-3 rounded-lg dark:hover:bg-neutral-900 dark:text-neutral-50 text-neutral-950"
             >
               Products
-              {/* <motion.div animate={{ rotate: isProductOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
-                <ChevronDown className="w-4 h-4" />
-              </motion.div> */}
             </button>
-
-            {/* <motion.div
-              ref={dropdownRef}
-              initial={false}
-              animate={isProductOpen ? "open" : "closed"}
-              variants={{
-                open: { opacity: 1, y: 0, pointerEvents: "auto", display: "block" },
-                closed: { opacity: 0, y: -10, pointerEvents: "none", transitionEnd: { display: "none" } },
-              }}
-              transition={{ duration: 0.2 }}
-              className="absolute top-full left-0 mt-4 w-[550px] xl:w-[600px] bg-white dark:bg-black text-black dark:text-white z-[100] rounded-xl shadow-xl border border-neutral-300 dark:border-neutral-800"
-            >
-              <div className="grid grid-cols-2 gap-4 xl:gap-6 p-4 xl:p-6">
-                {products.map((product, idx) => (
-                  <a
-                    key={idx}
-                    href={product.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-900 p-3 rounded-lg transition"
-                  >
-                    <div className="mb-3 overflow-hidden rounded-lg">
-                      <img
-                        src={product.src}
-                        alt={product.title}
-                        className="w-full h-28 xl:h-32 object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    <div className="font-semibold text-sm xl:text-base mb-1">{product.title}</div>
-                    <div className="text-xs xl:text-sm text-neutral-600 dark:text-neutral-400">{product.description}</div>
-                  </a>
-                ))}
-              </div>
-            </motion.div> */}
           </div>
 
           <a
@@ -177,20 +101,10 @@ export const Navbar = () => {
         {/* Right: Actions */}
         <div className="flex items-center ml-auto space-x-1.5 sm:space-x-2 md:space-x-3">
 
-          {/* Theme Toggle */}
           <Themetoggle />
-
-          {/* Login Button - Hidden on mobile, visible on md and up */}
-          {/* <button className="hidden md:block dark:hover:bg-neutral-900 font-semibold hover:bg-neutral-100 rounded-lg py-1.5 px-3 lg:py-2 lg:px-4 text-sm">
-            Login
-          </button> */}
-
-          {/* Sign Up Button - Always visible but responsive sizing */}
           <button className="dark:bg-neutral-100 font-semibold ring ring-neutral-300 dark:ring-neutral-600 bg-neutral-900 text-neutral-50 dark:text-neutral-900 px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-3 rounded-lg hover:bg-white dark:hover:bg-white dark:hover:text-black  hover:text-black border border-neutral-200 dark:border-neutral-950 hover:border-white dark:hover:border-black transition-colors duration-300 text-xs sm:text-sm">
             Start Building
           </button>
-
-          {/* Mobile Menu - Visible on lg and below */}
           <Sheet open={isMobileOpen} onOpenChange={setIsMobileOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="sm" className="lg:hidden p-1.5 sm:p-2">
