@@ -19,7 +19,7 @@ export default function FAQ() {
         <div className="px-4 lg:mx-0 md:mx-auto sm:px-3 md:px-6 lg:px-8 xl:px-12 pt-6 sm:pt-8 md:pt-10">
           <div className="flex items-center justify-center">
             <TextShimmer className="text-orange-600 text-sm font-medium tracking-wide uppercase">
-              Faq's
+              Faq&apos;s
             </TextShimmer>
           </div>
 

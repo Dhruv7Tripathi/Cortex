@@ -1,8 +1,6 @@
 import { Card } from "@/components/ui/card"
 import Image from "next/image"
 import { SiGithub, SiNotion, SiFigma, SiLoom, SiSlack, SiZerodha } from "react-icons/si"
-import { FaSmileBeam } from 'react-icons/fa';
-import { Button } from "./ui/button";
 import TextShimmer from "./ui/text-shimmer";
 
 interface Testimonial {
@@ -96,7 +94,7 @@ export function TestimonialsSection() {
   return (
     <section className="border-t border-neutral-200 dark:border-neutral-900 bg-white dark:bg-black ">
       <div className="relative
-        min-h-[calc(100vh-82px)]
+       
         px-4 sm:px-6
 
         md:mx-4 md:px-0
@@ -107,7 +105,7 @@ export function TestimonialsSection() {
         <div className="ml-8 flex flex-col justify-center items-center mb-8 sm:mb-10 md:mb-12">
           <div className="mb-4 mt-8">
             <TextShimmer className="text-orange-600 text-sm font-medium tracking-wide uppercase">
-              lovin'it
+              lovin&apos;it
 
             </TextShimmer>
           </div>

@@ -1,6 +1,4 @@
 import { PricingSection } from "@/components/ui/pricing-section"
-import { Button } from "./ui/button";
-import { MdWorkspacePremium } from "react-icons/md";
 import TextShimmer from "./ui/text-shimmer";
 
 export const PAYMENT_FREQUENCIES = ["monthly", "yearly"]

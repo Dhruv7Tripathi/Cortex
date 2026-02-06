@@ -2,7 +2,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
-import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { Themetoggle } from './ui/themetoggle';

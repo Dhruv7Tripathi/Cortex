@@ -48,7 +48,7 @@ export default function HomePage() {
                 "Primer",
                 "Bridge",
                 "incident.io",
-              ].map((brand, index) => (
+              ].map((brand) => (
                 <div
                   key={brand}
                   className="

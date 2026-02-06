@@ -1,12 +1,10 @@
 "use client"
 
-import { useRef, useState, useEffect } from "react"
-// import { motion } from "framer-motion"
+import { useRef, useState } from "react"
 import { cn } from "@/lib/utils"
 import { Themetoggle } from "./ui/themetoggle"
 import Image from "next/image"
-import { ChevronDown, Menu } from "lucide-react"
-// import { SiGithub } from "react-icons/si"
+import { Menu } from "lucide-react"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -39,9 +37,9 @@ const products = [
 ]
 
 export const Navbar = () => {
-  const [isProductOpen, setIsProductOpen] = useState(false)
+  const [, setIsProductOpen] = useState(false)
   const [isMobileOpen, setIsMobileOpen] = useState(false)
-  const dropdownRef = useRef<HTMLDivElement | null>(null)
+  // const dropdownRef = useRef<HTMLDivElement | null>(null)
   const buttonRef = useRef<HTMLButtonElement | null>(null)
 
   // useEffect(() => {
@@ -97,7 +95,7 @@ export const Navbar = () => {
               width={500}
               height={500}
               src={"/logo.png"}
-              alt="Linear Logo"
+              alt="Cortex Logo"
               quality={100}
               priority={true}
               className="h-8 w-8 sm:h-9 sm:w-9 dark:invert-0 invert  lg:h-10 lg:w-10 flex-shrink-0 rounded-xl object-cover"

@@ -30,7 +30,7 @@ export default function Footer() {
         </div>
 
         {/* Product column */}
-        <div className=" md:col-span-8 ml-24 px-12 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-8">
+        <div className=" md:col-span-8 ml-28 px-12 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-8">
 
           <div className="md:col-span-2 space-y-4">
             <h4 className="text-neutral-500 font-medium mb-6">Product</h4>
@@ -75,6 +75,24 @@ export default function Footer() {
 
         </div>
         {/* Newsletter column */}
+        {/* <div className="md:col-span-4 space-y-6">
+          <h4 className="text-neutral-500 font-medium mb-6">Subscribe to our newsletter</h4>
+          <p className="text-neutral-800 dark:text-neutral-300 text-sm sm:text-base leading-relaxed">
+            Get the latest updates and news about Cortex delivered straight to your inbox.
+          </p>
+          <form className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <input
+
+              type="email"
+              placeholder="Enter your email"
+              className="w-full sm:w-auto flex-1 px-4 py-2 border border-neutral-300 dark:border-neutral-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-400 dark:focus:ring-neutral-600 transition-colors"
+            />
+            <Button className="dark:bg-neutral-100 bg-neutral-900 text-white dark:text-black hover:bg-neutral-950 dark:hover:bg-neutral-50 rounded-lg px-6 font-semibold">
+              Subscribe
+            </Button>
+          </form>
+        </div> */}
+
 
       </div>
     </footer>
