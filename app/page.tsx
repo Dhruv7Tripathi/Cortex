@@ -6,7 +6,7 @@ import { Pricing } from "@/components/pricing";
 import { TestimonialsSection } from "@/components/testimonial-section";
 import BentoSection from "@/components/bento-grid";
 import CTASection from "@/components/cta";
-
+import TrustedBrands from "@/components/logo";
 export default function HomePage() {
   return (
     <div className="bg-white dark:bg-black text-gray-900 dark:text-gray-100">
@@ -39,6 +39,7 @@ export default function HomePage() {
             border-neutral-200 dark:border-neutral-800
             border-b md:border-b-0
             border-r
+            hover:bg-neutral-50 dark:hover:bg-neutral-900
             md:[&:nth-child(4n)]:border-r-0
             grayscale opacity-50
             hover:grayscale-0 hover:opacity-100
