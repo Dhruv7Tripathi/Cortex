@@ -6,7 +6,6 @@ export default function FAQ() {
   return (
     <div className="border-t border-neutral-200 dark:border-neutral-900 bg-white dark:bg-black">
       <div className="relative
-        min-h-[calc(100vh-82px)]
         px-4 sm:px-6
 
         md:mx-4 md:px-0

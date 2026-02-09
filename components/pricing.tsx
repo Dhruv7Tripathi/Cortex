@@ -77,9 +77,8 @@ export const TIERS = [
 
 export function Pricing() {
   return (
-    <div className="justify-center flex flex-col  border-t border-neutral-200 dark:border-neutral-900 bg-white dark:bg-black mt-8 ">
-      <div className="relative
-        min-h-[calc(100vh-82px)]
+    <div className="flex flex-col border-t border-neutral-200 dark:border-neutral-900 bg-white dark:bg-black ">
+      <div className="
         px-4 sm:px-6
 
         md:mx-4 md:px-0
@@ -99,12 +98,11 @@ export function Pricing() {
             <p className="text-neutral-700 dark:text-neutral-300">Choose the best plan for your needs</p>
           </div>
         </div>
-        <div className="">
-          <PricingSection
-            frequencies={PAYMENT_FREQUENCIES}
-            tiers={TIERS}
-          />
-        </div>
+
+        <PricingSection
+          frequencies={PAYMENT_FREQUENCIES}
+          tiers={TIERS}
+        />
       </div>
     </div>
   );
