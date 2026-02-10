@@ -2,7 +2,16 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Apple, Github, Slack, Twitter, MessageCircle, Cloud, Globe, Share2 } from "lucide-react"
+import {
+  Apple,
+  Github,
+  Slack,
+  Twitter,
+  MessageCircle,
+  Cloud,
+  Globe,
+  Share2,
+} from "lucide-react"
 
 const icons = [
   { Icon: Apple, color: "text-neutral-900 dark:text-white" },
@@ -17,15 +26,15 @@ const icons = [
 
 export default function CTASection() {
   return (
-    <section className="dark:bg-black bg-white border-t border-neutral-300 dark:border-neutral-800 py-42 relative overflow-hidden flex flex-col items-center justify-center">
+    <section className="relative overflow-hidden flex flex-col items-center justify-center py-32 bg-white dark:bg-black border-t border-neutral-200 dark:border-neutral-800">
       {/* Orbital background */}
-      <div className="absolute inset-0 border border-l border-r mr-28 ml-28  border-neutral-300 dark:border-neutral-900 flex items-center justify-center ">
-        <div className="relative w-full aspect-square max-w-4xl flex items-center justify-center">
-          {/* Concentric Circles */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="relative w-full max-w-4xl aspect-square flex items-center justify-center">
+          {/* Concentric circles */}
           {[1, 2, 3].map((circle) => (
             <div
               key={circle}
-              className="absolute border dark:border-neutral-800 border-neutral-200 rounded-full"
+              className="absolute rounded-full border border-neutral-200 dark:border-neutral-800"
               style={{
                 width: `${circle * 33}%`,
                 height: `${circle * 33}%`,
@@ -37,7 +46,7 @@ export default function CTASection() {
           {icons.map(({ Icon, color }, index) => {
             const orbit = (index % 3) + 1
             const duration = 20 + index * 4
-            const radius = orbit * 110 // distance from center
+            const radius = orbit * 110
 
             return (
               <motion.div
@@ -51,7 +60,10 @@ export default function CTASection() {
                 }}
               >
                 <div
-                  className={`dark:bg-black dark:text-neutral-50 bg-neutral-950 p-3 rounded-xl border border-neutral-300 dark:border-neutral-800 backdrop-blur-sm shadow-lg ${color}`}
+                  className={`p-3 rounded-xl border shadow-lg backdrop-blur-sm
+                    bg-white dark:bg-neutral-900
+                    border-neutral-200 dark:border-neutral-800
+                    ${color}`}
                   style={{
                     transform: `translateX(${radius}px)`,
                   }}
@@ -61,18 +73,22 @@ export default function CTASection() {
               </motion.div>
             )
           })}
-
         </div>
       </div>
 
-      {/* Content Overlay */}
+      {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-6xl font-bold text-black dark:text-white tracking-tight mb-8 leading-[1.1]">
-          Connect your Current Stack <br className="hidden md:block" /> and Start Automating
+        <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1] text-neutral-900 dark:text-white">
+          Connect your Current Stack
+          <br className="hidden md:block" />
+          and Start Automating
         </h2>
+
         <Button
           size="lg"
-          className="dark:bg-neutral-100 bg-neutral-900 text-white dark:text-black hover:bg-neutral-950:hover:bg-neutral-200 px-10 py-7 text-lg font-semibold rounded-full shadow-2xl transition-all"
+          className="px-10 py-7 text-lg font-semibold rounded-full shadow-2xl transition-all
+            bg-neutral-900 text-white hover:bg-neutral-800
+            dark:bg-neutral-100 dark:text-black dark:hover:bg-neutral-200"
         >
           Start Building for Free
         </Button>

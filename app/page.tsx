@@ -6,7 +6,7 @@ import { Pricing } from "@/components/pricing";
 import { TestimonialsSection } from "@/components/testimonial-section";
 import BentoSection from "@/components/bento-grid";
 import CTASection from "@/components/cta";
-import TrustedBrands from "@/components/logo";
+// import TrustedBrands from "@/components/logo";
 export default function HomePage() {
   return (
     <div className="bg-white dark:bg-black text-gray-900 dark:text-gray-100">
