@@ -16,35 +16,30 @@ type EventCardProps = {
 const EventCard = ({
   firstEvent = "Solana Meet: BLR",
   firstEventTime = "8:30–11PM",
-  // secondEvent = "UX Testing Slot",
-  // secondEventTime = "5:30–8:30PM",
+  secondEvent = "UX Testing Slot",
+  secondEventTime = "5:30–8:30PM",
   cardTitle = "Event Timeline",
   cardDescription = "Visualize and navigate your daily flow with beautifully animated, color-coded time blocks.",
 }: EventCardProps) => {
-  const [, setIsHovered] = useState(false);
-  const [screenSize, setScreenSize] = useState<'sm' | 'md' | 'lg'>('lg');
+  const [isHovered, setIsHovered] = useState(false);
+  const [screenSize, setScreenSize] = useState<"sm" | "md" | "lg">("lg");
 
   useEffect(() => {
     const checkScreenSize = () => {
       const width = window.innerWidth;
-      if (width < 768) {
-        setScreenSize('sm');
-      } else if (width < 1024) {
-        setScreenSize('md');
-      } else {
-        setScreenSize('lg');
-      }
+      if (width < 768) setScreenSize("sm");
+      else if (width < 1024) setScreenSize("md");
+      else setScreenSize("lg");
     };
 
     checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-    return () => window.removeEventListener('resize', checkScreenSize);
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
-  // Get responsive values based on screen size
   const getResponsiveValues = () => {
     switch (screenSize) {
-      case 'sm':
+      case "sm":
         return {
           containerWidth: 280,
           containerHeight: 200,
@@ -52,13 +47,13 @@ const EventCard = ({
           gridHeight: 240,
           calendarTransform: "translateY(-50px) translateX(-170px)",
           firstEventPosition: { left: 60, top: 60 },
-          secondEventPosition: { left: 280, top: 120 },
+          secondEventPosition: { left: 200, top: 120 },
           eventWidth: 120,
           gridCols: 7,
           gridItems: 28,
           cellSize: 60,
         };
-      case 'md':
+      case "md":
         return {
           containerWidth: 340,
           containerHeight: 240,
@@ -66,13 +61,13 @@ const EventCard = ({
           gridHeight: 280,
           calendarTransform: "translateY(-60px) translateX(-210px)",
           firstEventPosition: { left: 70, top: 70 },
-          secondEventPosition: { left: 330, top: 140 },
+          secondEventPosition: { left: 260, top: 140 },
           eventWidth: 128,
           gridCols: 8,
           gridItems: 32,
           cellSize: 70,
         };
-      default: // lg
+      default:
         return {
           containerWidth: 380,
           containerHeight: 280,
@@ -80,7 +75,7 @@ const EventCard = ({
           gridHeight: 300,
           calendarTransform: "translateY(-70px) translateX(-255px)",
           firstEventPosition: { left: 84, top: 85 },
-          secondEventPosition: { left: 389, top: 164 },
+          secondEventPosition: { left: 320, top: 164 },
           eventWidth: 128,
           gridCols: 9,
           gridItems: 36,
@@ -94,19 +89,11 @@ const EventCard = ({
   const calendarVariant: Variants = {
     open: {
       transform: responsiveValues.calendarTransform,
-      transition: {
-        duration: 0.6,
-        delay: 0.13,
-        ease: "easeInOut",
-      },
+      transition: { duration: 0.6, ease: "easeInOut" },
     },
     close: {
       transform: "translateY(0px) translateX(0px)",
-      transition: {
-        duration: 0.6,
-        delay: 0.13,
-        ease: "easeInOut",
-      },
+      transition: { duration: 0.6, ease: "easeInOut" },
     },
   };
 
@@ -115,13 +102,28 @@ const EventCard = ({
       opacity: 0,
       y: 5,
       height: 0,
-      transition: { duration: 0.35, ease: "easeInOut", delay: 0 },
+      transition: { duration: 0.3 },
     },
     close: {
       opacity: 1,
       y: 0,
       height: "auto",
-      transition: { duration: 0.35, ease: "easeInOut", delay: 0.45 },
+      transition: { duration: 0.3, delay: 0.3 },
+    },
+  };
+
+  const secondTimeVariant: Variants = {
+    open: {
+      opacity: 1,
+      y: 0,
+      height: "auto",
+      transition: { duration: 0.3, delay: 0.3 },
+    },
+    close: {
+      opacity: 0,
+      y: 5,
+      height: 0,
+      transition: { duration: 0.3 },
     },
   };
 
@@ -129,121 +131,80 @@ const EventCard = ({
     <motion.div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      initial="close"
-      className={cn(
-        "relative flex w-full flex-col justify-center rounded-md px-0.5 pb-0.5 pt-0.5",
-
-        "max-w-[280px] sm:max-w-[340px] lg:max-w-[400px]"
-      )}
+      className="relative w-full max-w-[400px]"
     >
-      <div
-        className={cn(
-          "flex w-full flex-col justify-center",
-          "border border-neutral-200 dark:border-neutral-800/50",
-          "rounded-md px-1.5 pb-1.5 pt-1.5",
-        )}
-      >
+      <div className="relative overflow-hidden rounded-md border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-950">
         <div
-          className={cn(
-            "relative flex w-full flex-col gap-1 overflow-hidden",
-            "rounded-[6px] border border-neutral-200 dark:border-neutral-800/60",
-            "bg-neutral-100 dark:bg-neutral-950",
-            // Responsive heights
-            "min-h-[200px] sm:min-h-[240px] lg:min-h-[280px]"
-          )}
+          className="relative mx-auto overflow-hidden"
+          style={{
+            height: responsiveValues.containerHeight,
+            width: responsiveValues.containerWidth,
+          }}
         >
-          <div
-            className="relative mx-auto w-full overflow-hidden"
+          <motion.div
+            variants={calendarVariant}
+            animate={isHovered ? "open" : "close"}
+            className="absolute left-0 top-0"
             style={{
-              height: `${responsiveValues.containerHeight}px`,
-              minWidth: `${responsiveValues.containerWidth}px`,
-              maxWidth: `${responsiveValues.containerWidth}px`,
+              height: responsiveValues.gridHeight,
+              width: responsiveValues.gridWidth,
             }}
           >
-            <motion.div
-              variants={calendarVariant}
-              className="absolute left-0 top-0"
+            <CalendarGrid
+              gridCols={responsiveValues.gridCols}
+              gridItems={responsiveValues.gridItems}
+              cellSize={responsiveValues.cellSize}
+            />
+
+            {/* First Event */}
+            <div
+              className="absolute flex min-h-8 items-center rounded-sm bg-gradient-to-r from-green-600 to-green-400 p-1"
               style={{
-                height: `${responsiveValues.gridHeight}px`,
-                width: `${responsiveValues.gridWidth}px`,
+                left: responsiveValues.firstEventPosition.left,
+                top: responsiveValues.firstEventPosition.top,
+                width: responsiveValues.eventWidth,
               }}
             >
-              <div className="relative h-full w-full">
-                <CalendarGrid
-                  gridCols={responsiveValues.gridCols}
-                  gridItems={responsiveValues.gridItems}
-                  cellSize={responsiveValues.cellSize}
-                />
-
-                {/* First Event */}
-                <div
-                  className={cn(
-                    "absolute flex min-h-8 items-center justify-between rounded-sm",
-                    "bg-gradient-to-r from-green-600 to-green-400 p-1 dark:to-emerald-800",
-                  )}
-                  style={{
-                    left: `${responsiveValues.firstEventPosition.left}px`,
-                    top: `${responsiveValues.firstEventPosition.top}px`,
-                    width: `${responsiveValues.eventWidth}px`,
-                  }}
+              <div className="flex flex-col px-2 text-white text-xs">
+                <p>{firstEvent}</p>
+                <motion.p
+                  variants={firstTimeVariant}
+                  animate={isHovered ? "open" : "close"}
+                  className="overflow-hidden text-[11px]"
                 >
-                  <div className="relative flex w-full items-center justify-between">
-                    <span className={cn(
-                      "rounded-sm bg-neutral-300 dark:bg-neutral-400",
-                      // Responsive indicator size
-                      "h-[8px] w-[2.5px] sm:h-[10px] sm:w-[3px]"
-                    )} />
-                    <div className="flex h-full w-full flex-col justify-center px-2">
-                      <p className={cn(
-                        "text-neutral-50 dark:text-neutral-200",
-                        // Responsive text size
-                        "text-[10px] sm:text-xs"
-                      )}>
-                        {firstEvent}
-                      </p>
-                      <motion.p
-                        variants={firstTimeVariant}
-                        className={cn(
-                          "overflow-hidden text-neutral-100 dark:text-neutral-300",
-                          // Responsive text size
-                          "text-[9px] sm:text-[11px]"
-                        )}
-                      >
-                        {firstEventTime}
-                      </motion.p>
-                    </div>
-                    <span className={cn(
-                      "rounded-sm bg-neutral-200 dark:bg-neutral-500",
-                      // Responsive indicator size
-                      "h-[8px] w-[2.5px] sm:h-[10px] sm:w-[3px]"
-                    )} />
-                  </div>
-                </div>
+                  {firstEventTime}
+                </motion.p>
               </div>
-            </motion.div>
-          </div>
-          <ContainerMask />
+            </div>
+
+            {/* Second Event */}
+            <div
+              className="absolute flex min-h-8 items-center rounded-sm bg-neutral-400 dark:bg-neutral-900 p-1"
+              style={{
+                left: responsiveValues.secondEventPosition.left,
+                top: responsiveValues.secondEventPosition.top,
+                width: responsiveValues.eventWidth,
+              }}
+            >
+              <div className="flex flex-col px-2 text-white text-xs">
+                <p>{secondEvent}</p>
+                <motion.p
+                  variants={secondTimeVariant}
+                  animate={isHovered ? "open" : "close"}
+                  className="overflow-hidden text-[11px]"
+                >
+                  {secondEventTime}
+                </motion.p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
 
-      {/* Card Description */}
-      <div className={cn(
-        "absolute bottom-4 left-0 w-full",
-        // Responsive padding
-        "px-3 sm:px-4 lg:px-5"
-      )}>
-        <h3 className={cn(
-          "font-semibold text-primary",
-          // Responsive text size
-          "text-xs sm:text-sm"
-        )}>
-          {cardTitle}
-        </h3>
-        <p className={cn(
-          "text-neutral-800 dark:text-neutral-400",
-          // Responsive text size and margin
-          "mt-1 text-[10px] sm:mt-1.5 sm:text-xs"
-        )}>
+      {/* Description */}
+      <div className="absolute bottom-4 left-0 w-full px-4">
+        <h3 className="text-sm font-semibold text-primary">{cardTitle}</h3>
+        <p className="mt-1 text-xs text-neutral-600 dark:text-neutral-400">
           {cardDescription}
         </p>
       </div>
@@ -259,31 +220,25 @@ type CalendarGridProps = {
   cellSize: number;
 };
 
-const CalendarGrid = ({ gridCols, gridItems, cellSize }: CalendarGridProps) => {
-  const days = Array.from({ length: gridItems }, (_, i) => i + 1);
-
+const CalendarGrid = ({
+  gridCols,
+  gridItems,
+  cellSize,
+}: CalendarGridProps) => {
   return (
     <div
-      className="grid w-fit gap-0"
+      className="grid"
       style={{
-        gridTemplateColumns: `repeat(${gridCols}, 1fr)`,
+        gridTemplateColumns: `repeat(${gridCols}, ${cellSize}px)`,
       }}
     >
-      {days.map((day, idx) => (
+      {Array.from({ length: gridItems }).map((_, i) => (
         <div
-          key={idx}
-          className={cn(
-            "flex items-end justify-start border-b border-r border-neutral-200 p-1",
-            "text-neutral-400 dark:border-neutral-800/60 dark:text-neutral-700",
-            // Responsive text size
-            "text-[8px] sm:text-[10px]"
-          )}
-          style={{
-            height: `${cellSize}px`,
-            width: `${cellSize}px`,
-          }}
+          key={i}
+          className="border border-neutral-200 dark:border-neutral-800 text-neutral-400 text-[10px] flex items-end p-1"
+          style={{ height: cellSize }}
         >
-          {day}
+          {i + 1}
         </div>
       ))}
     </div>
