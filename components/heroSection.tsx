@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import TextShimmer from "./ui/text-shimmer"
+import Link from "next/link"
 export default function HeroSection() {
   return (
     <div className="relative
@@ -58,7 +59,11 @@ export default function HeroSection() {
             </div>
             <span className="h-4 w-[1px] bg-neutral-800 mx-2" />
             <span>Innovative AI solution 2025 by</span>
-            <span className="dark:text-neutral-100 text-neutral-900 font-bold">Dhruv</span>
+            <Link
+              href="https://layrdui.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="dark:text-neutral-100 text-neutral-900 font-bold">LayrdUI</Link>
           </div>
         </motion.section>
 
