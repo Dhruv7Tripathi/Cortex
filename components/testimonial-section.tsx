@@ -102,7 +102,7 @@ export function TestimonialsSection() {
         
         lg:mx-8 xl:mx-28
         lg:border-l lg:border-r lg:border-neutral-200 lg:dark:border-neutral-900">
-        <div className="ml-8 flex flex-col justify-center items-center mb-8 sm:mb-10 md:mb-12">
+        <div className="ml-8 flex flex-col space-y-4 justify-center items-center mb-8 sm:mb-10 md:mb-12">
           <div className="mb-4 mt-8">
             <TextShimmer className="text-orange-600 text-sm font-medium tracking-wide uppercase">
               lovin&apos;it

@@ -76,7 +76,7 @@ export const Navbar = () => {
           </div>
 
           <a
-            href="#pricing"
+            href="/pricing"
             className="hover:bg-neutral-100 py-2 px-3 rounded-lg dark:hover:bg-neutral-900 dark:text-neutral-50 text-neutral-950"
             onMouseEnter={() => setIsProductOpen(false)}
           >
@@ -87,10 +87,10 @@ export const Navbar = () => {
             className="hover:bg-neutral-100 py-2 px-3 rounded-lg dark:hover:bg-neutral-900 dark:text-neutral-50 text-neutral-950"
             onMouseEnter={() => setIsProductOpen(false)}
           >
-            FAQ
+            FAQs
           </a>
           <a
-            href="#blog"
+            href="#"
             className="hover:bg-neutral-100 py-2 px-3 rounded-lg dark:hover:bg-neutral-900 dark:text-neutral-50 text-neutral-950"
             onMouseEnter={() => setIsProductOpen(false)}
           >

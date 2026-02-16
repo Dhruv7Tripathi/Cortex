@@ -1,33 +1,43 @@
 export const faqData = [
   {
-    question: "What is the Linear template?",
+    question: "What is the Cortex template?",
     answer:
-      "The Linear template is a pre-built project structure designed to help you quickly start building modern web applications with best practices and efficient workflows.",
+      "Cortex is a premium template built by layrdUI, designed to provide cutting-edge solutions for building scalable and high-performance web applications with modern best practices.",
   },
   {
-    question: "Why should I use the Linear template?",
+    question: "Why should I choose Cortex over other templates?",
     answer:
-      "Using the Linear template saves you time by providing a solid foundation, including optimized configurations, reusable components, and integration with popular tools.",
+      "Cortex offers premium features, professional design patterns, advanced component library, and enterprise-grade configurations that ensure robust and maintainable code.",
   },
   {
-    question: "Can I customize the Linear template?",
+    question: "What makes Cortex a premium template?",
     answer:
-      "Yes, the Linear template is fully customizable. You can modify components, styles, and configurations to fit your specific project requirements.",
+      "Cortex includes exclusive features such as advanced UI components, optimized performance, comprehensive documentation, premium support, and professional design system.",
   },
   {
-    question: "Does the Linear template support TypeScript?",
+    question: "Is Cortex fully customizable?",
     answer:
-      "Absolutely. The Linear template is built with TypeScript, ensuring type safety and improved developer experience.",
+      "Yes, Cortex is completely customizable. All components, styles, and configurations can be modified to match your brand identity and project requirements.",
   },
   {
-    question: "How do I get started with the Linear template?",
+    question: "Does Cortex support TypeScript?",
     answer:
-      "Simply clone the repository, install dependencies, and follow the documentation to launch your project in minutes.",
+      "Absolutely. Cortex is built with TypeScript throughout, providing full type safety, excellent developer tooling, and improved code reliability.",
   },
   {
-    question: "Is there documentation available?",
+    question: "How do I get started with Cortex?",
     answer:
-      "Yes, comprehensive documentation is provided to guide you through setup, customization, and deployment.",
+      "Clone the repository, install dependencies using npm or yarn, and follow the comprehensive setup guide to launch your project in minutes.",
+  },
+  {
+    question: "What documentation is available for Cortex?",
+    answer:
+      "Cortex includes extensive documentation covering installation, customization, component usage, deployment, and best practices.",
+  },
+  {
+    question: "What support does layrdUI provide for Cortex?",
+    answer:
+      "As a premium template, Cortex includes dedicated support, regular updates, bug fixes, and access to the layrdUI community.",
   },
 ]
 

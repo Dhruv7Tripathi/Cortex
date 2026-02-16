@@ -7,8 +7,9 @@ import Image from 'next/image';
 import { Themetoggle } from './ui/themetoggle';
 const menuItems = [
   { name: 'Products', href: '/' },
-  { name: 'Pricing', href: '/#pricing' },
-  { name: 'FAQs', href: '/#faqs' },
+  { name: 'Pricing', href: '/pricing' },
+  { name: 'FAQs', href: '/#' },
+  { name: 'Blogs', href: '/#' },
 ]
 
 const Navbar2 = () => {

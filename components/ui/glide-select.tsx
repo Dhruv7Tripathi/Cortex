@@ -236,7 +236,7 @@ const GlideSelect = ({
                 <span
                   className={cn(
                     "h-2 w-2 rounded-[1px] transition-colors delay-100 duration-700 ease-in-out",
-                    idx === currentStep ? "bg-amber-400" : "bg-primary/30",
+                    idx === currentStep ? "bg-green-600" : "bg-primary/30",
                   )}
                 />
               </div>
