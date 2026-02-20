@@ -83,7 +83,7 @@ export const Navbar = () => {
             Pricing
           </a>
           <a
-            href="#faq"
+            href="#"
             className="hover:bg-neutral-100 py-2 px-3 rounded-lg dark:hover:bg-neutral-900 dark:text-neutral-50 text-neutral-950"
             onMouseEnter={() => setIsProductOpen(false)}
           >
