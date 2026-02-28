@@ -169,7 +169,6 @@ export const Navbar = () => {
 
                 <div className="flex flex-col mt-6 space-y-1">
 
-                  {/* Mobile CTA — only on xs where desktop button is hidden */}
                   <div className="sm:hidden pb-4 border-b mb-3">
                     <button className="w-full dark:bg-neutral-100 font-semibold ring ring-neutral-300 dark:ring-neutral-600 bg-neutral-900 text-neutral-50 dark:text-neutral-900 py-2.5 rounded-lg text-sm transition-colors duration-200">
                       Start Building
