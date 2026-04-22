@@ -1,47 +1,107 @@
-import { FaApple } from "react-icons/fa"
-import {
-  SiHp,
-  SiDell,
-  SiXiaomi,
-  SiJbl,
-  SiAsus,
-  SiEpson,
-  SiLapce,
-} from "react-icons/si"
+"use client";
+
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const brands = [
-  { name: "EPSON", icon: <SiEpson size={60} /> },
-  { name: "HP", icon: <SiHp size={50} /> },
-  { name: "DELL", icon: <SiDell size={50} /> },
-  { name: "Apple", icon: <FaApple size={50} /> },
-  { name: "Mi", icon: <SiXiaomi size={50} /> },
-  { name: "Logi", icon: <SiLapce size={50} /> },
-  { name: "JBL", icon: <SiJbl size={50} /> },
-  { name: "ASUS", icon: <SiAsus size={50} /> },
-]
+  "Attention",
+  "Bill",
+  "Hippocratic AI",
+  "Replicate",
+  "Granola",
+  "Primer",
+  "Bridge",
+  "incident.io",
+];
 
-export default function SelectedBrands() {
+export default function BrandGrid() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [isUserHovering, setIsUserHovering] = useState(false);
+
+  // Auto-cycle through brands
+  useEffect(() => {
+    if (isUserHovering) return;
+
+    let current = 0;
+    const interval = setInterval(() => {
+      setActiveIndex(current);
+      current = (current + 1) % brands.length;
+    }, 900);
+
+    return () => clearInterval(interval);
+  }, [isUserHovering]);
+
   return (
-    <section className="py-12 mt-16 bg-white dark:bg-black">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-        {/* <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900 dark:text-neutral-100 mb-10">
-          Selected Brands
-        </h2> */}
-        <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-10 place-items-center">
-          {brands.map((brand) => (
-            <div
-              key={brand.name}
-              className="text-neutral-800 dark:text-neutral-200 dark:hover:text-white hover:text-black transition"
-            >
-              {brand.icon ? (
-                brand.icon
-              ) : (
-                <span className="text-lg font-bold">{brand.name}</span>
-              )}
-            </div>
-          ))}
+    <section>
+      <div className="border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black py-12 sm:py-16 lg:py-20">
+        <p className="text-center dark:text-neutral-100 text-neutral-900 text-xs font-bold tracking-[0.2em] uppercase mb-8 sm:mb-10 lg:mb-12 px-4">
+          Trusted by fast growing startups
+        </p>
+
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border border-neutral-200 dark:border-neutral-900 overflow-hidden mx-4 sm:mx-6 lg:mx-0"
+          onMouseEnter={() => {
+            setIsUserHovering(true);
+            setActiveIndex(null);
+          }}
+          onMouseLeave={() => {
+            setIsUserHovering(false);
+          }}
+        >
+          {brands.map((brand, index) => {
+            const isActive = activeIndex === index;
+
+            return (
+              <motion.div
+                key={brand}
+                animate={{
+                  filter: isActive ? "grayscale(0%)" : "grayscale(100%)",
+                  opacity: isActive ? 1 : 0.5,
+                  backgroundColor: isActive
+                    ? "var(--hover-bg)"
+                    : "var(--default-bg)",
+                }}
+                whileHover={{
+                  filter: "grayscale(0%)",
+                  opacity: 1,
+                  backgroundColor: "var(--hover-bg)",
+                }}
+                transition={{
+                  duration: 0.35,
+                  ease: "easeInOut",
+                }}
+                onHoverStart={() => setActiveIndex(index)}
+                onHoverEnd={() => !isUserHovering && setActiveIndex(null)}
+                className={`
+                  flex items-center justify-center p-8 sm:p-10 lg:p-14
+                  border-neutral-200 dark:border-neutral-800
+                  border-b border-r
+                  cursor-default
+                  [--default-bg:theme(colors.white)] dark:[--default-bg:theme(colors.black)]
+                  [--hover-bg:theme(colors.neutral.50)] dark:[--hover-bg:theme(colors.neutral.900)]
+                  [&:last-child]:border-b-0
+                  sm:[&:nth-child(2n)]:border-r-0
+                  sm:[&:nth-child(n+7)]:border-b-0
+                  lg:[&:nth-child(2n)]:border-r
+                  lg:[&:nth-child(4n)]:border-r-0
+                  lg:[&:nth-child(n+5)]:border-b-0
+                  lg:[&:nth-child(n+7)]:border-b
+                `}
+              >
+                <motion.span
+                  animate={{
+                    scale: isActive ? 1.06 : 1,
+                  }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  className="text-base sm:text-lg font-bold text-neutral-900 dark:text-white select-none"
+                >
+                  {brand}
+                </motion.span>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   images
     : {
-    domains: ["i.pinimg.com"],
+    domains: ["i.pinimg.com", "layrdui.in"],
   },
 };
 

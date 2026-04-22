@@ -6,6 +6,7 @@ import { Pricing } from "@/components/pricing";
 import { TestimonialsSection } from "@/components/testimonial-section";
 import BentoSection from "@/components/bento-grid";
 import CTASection from "@/components/cta";
+import BrandGrid from "@/components/brands";
 export default function HomePage() {
   return (
     <div className="bg-white dark:bg-black text-gray-900 dark:text-gray-100">
@@ -15,6 +16,9 @@ export default function HomePage() {
         <HeroSection />
       </section>
       <section>
+        <BrandGrid />
+      </section>
+      {/* <section>
         <div className="border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black py-12 sm:py-16 lg:py-20">
           <p className="text-center dark:text-neutral-100 text-neutral-900 text-xs font-bold tracking-[0.2em] uppercase mb-8 sm:mb-10 lg:mb-12 px-4">
             Trusted by fast growing startups
@@ -59,7 +63,7 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
       <section>
         <BentoSection />
       </section>
