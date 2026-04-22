@@ -26,7 +26,7 @@ export default function BrandGrid() {
     const interval = setInterval(() => {
       setActiveIndex(current);
       current = (current + 1) % brands.length;
-    }, 900);
+    }, 1900);
 
     return () => clearInterval(interval);
   }, [isUserHovering]);
