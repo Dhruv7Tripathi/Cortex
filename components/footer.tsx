@@ -14,12 +14,12 @@ export default function Footer() {
         md:border-l md:border-r md:border-neutral-200 md:dark:border-neutral-900
         lg:mx-8 xl:mx-28
         lg:border-l lg:border-r lg:border-neutral-200 lg:dark:border-neutral-900
-        py-12 sm:py-16 lg:py-20 
+        py-12 sm:py-16 lg:py-10 
         grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12
       ">
 
         {/* Left column */}
-        <div className="lg:col-span-4 space-y-5 sm:space-y-6">
+        <div className="lg:col-span-4 ml-6 space-y-5 sm:space-y-6">
           <Link href="/" className="flex items-center gap-3">
             <Image
               width={40}
@@ -43,13 +43,13 @@ export default function Footer() {
         </div>
 
         {/* Links Section */}
-        <div className="lg:col-span-8 flex justify-end items-end">
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-8 text-right">
+        <div className="lg:col-span-8 flex mr-8 justify-end items-end">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-8 ">
 
             {/* Product */}
             <div>
               <h4 className="text-neutral-500 font-medium mb-4 text-sm sm:text-base">Product</h4>
-              <ul className="space-y-2 sm:space-y-3">
+              <ul className="space-y-1 ]">
                 {["Agent Builder", "Simulation", "Integrations", "Multi Agent", "Workflow API"].map((item) => (
                   <li key={item}>
                     <Link href="#" className="text-sm text-neutral-800 dark:text-neutral-200 hover:text-black dark:hover:text-white transition">
@@ -63,7 +63,7 @@ export default function Footer() {
             {/* Company */}
             <div>
               <h4 className="text-neutral-500 font-medium mb-4 text-sm sm:text-base">Company</h4>
-              <ul className="space-y-2 sm:space-y-3">
+              <ul className="space-y-1">
                 {["Sign In", "About", "Contact", "Pricing", "Docs"].map((item) => (
                   <li key={item}>
                     <Link href="#" className="text-sm text-neutral-800 dark:text-neutral-200 hover:text-black dark:hover:text-white transition">
@@ -107,9 +107,9 @@ export default function Footer() {
           text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 text-center sm:text-left
         ">
 
-          <p>© {new Date().getFullYear()} Cortex. All rights reserved.</p>
+          <p className="ml-4">© {new Date().getFullYear()} Cortex. All rights reserved.</p>
 
-          <p className="flex items-center gap-2">
+          <p className="flex items-center mr-8 gap-2">
             Made with <span className="animate-pulse">❤️</span> by
             <Link
               href="https://layrdui.in"

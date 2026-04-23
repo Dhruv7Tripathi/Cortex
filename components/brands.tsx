@@ -14,22 +14,38 @@ const brands = [
   "incident.io",
 ];
 
-export default function BrandGrid() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const [isUserHovering, setIsUserHovering] = useState(false);
+// Anti-diagonal pairs for a 4-col × 2-row grid
+// Row 0: indices 0,1,2,3  |  Row 1: indices 4,5,6,7
+// Anti-diagonal: col c (row 0) pairs with col (3-c) (row 1)
+const DIAGONAL_PAIRS: number[][] = [
+  [0, 7], // col 0 top  ↔  col 3 bottom
+  [1, 6], // col 1 top  ↔  col 2 bottom
+  [2, 5], // col 2 top  ↔  col 1 bottom
+  [3, 4], // col 3 top  ↔  col 0 bottom
+];
 
-  // Auto-cycle through brands
+export default function BrandGrid() {
+  const [activePairIndex, setActivePairIndex] = useState<number>(0);
+  const [isUserHovering, setIsUserHovering] = useState(false);
+  const [manualActive, setManualActive] = useState<number | null>(null);
+
   useEffect(() => {
     if (isUserHovering) return;
 
-    let current = 0;
     const interval = setInterval(() => {
-      setActiveIndex(current);
-      current = (current + 1) % brands.length;
-    }, 1900);
+      setActivePairIndex((prev) => (prev + 1) % DIAGONAL_PAIRS.length);
+    }, 1200);
 
     return () => clearInterval(interval);
   }, [isUserHovering]);
+
+  const activeSet = new Set<number>(
+    isUserHovering
+      ? manualActive !== null
+        ? [manualActive]
+        : []
+      : DIAGONAL_PAIRS[activePairIndex]
+  );
 
   return (
     <section>
@@ -42,36 +58,41 @@ export default function BrandGrid() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border border-neutral-200 dark:border-neutral-900 overflow-hidden mx-4 sm:mx-6 lg:mx-0"
           onMouseEnter={() => {
             setIsUserHovering(true);
-            setActiveIndex(null);
+            setManualActive(null);
           }}
           onMouseLeave={() => {
             setIsUserHovering(false);
+            setManualActive(null);
           }}
         >
           {brands.map((brand, index) => {
-            const isActive = activeIndex === index;
+            const isActive = activeSet.has(index);
 
             return (
               <motion.div
                 key={brand}
                 animate={{
                   filter: isActive ? "grayscale(0%)" : "grayscale(100%)",
-                  opacity: isActive ? 1 : 0.5,
+                  opacity: isActive ? 1 : 0.45,
                   backgroundColor: isActive
                     ? "var(--hover-bg)"
                     : "var(--default-bg)",
                 }}
-                whileHover={{
-                  filter: "grayscale(0%)",
-                  opacity: 1,
-                  backgroundColor: "var(--hover-bg)",
-                }}
+                whileHover={
+                  isUserHovering
+                    ? {
+                      filter: "grayscale(0%)",
+                      opacity: 1,
+                      backgroundColor: "var(--hover-bg)",
+                    }
+                    : {}
+                }
                 transition={{
-                  duration: 0.35,
-                  ease: "easeInOut",
+                  duration: 0.5,
+                  ease: [0.4, 0, 0.2, 1],
                 }}
-                onHoverStart={() => setActiveIndex(index)}
-                onHoverEnd={() => !isUserHovering && setActiveIndex(null)}
+                onHoverStart={() => isUserHovering && setManualActive(index)}
+                onHoverEnd={() => isUserHovering && setManualActive(null)}
                 className={`
                   flex items-center justify-center p-8 sm:p-10 lg:p-14
                   border-neutral-200 dark:border-neutral-800
@@ -89,10 +110,8 @@ export default function BrandGrid() {
                 `}
               >
                 <motion.span
-                  animate={{
-                    scale: isActive ? 1.06 : 1,
-                  }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  animate={{ scale: isActive ? 1.07 : 1 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
                   className="text-base sm:text-lg font-bold text-neutral-900 dark:text-white select-none"
                 >
                   {brand}
