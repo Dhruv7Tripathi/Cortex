@@ -77,7 +77,7 @@ export default function Footer() {
             {/* Legal */}
             <div className="col-span-2 sm:col-span-1">
               <h4 className="text-neutral-500 font-medium mb-4 text-sm sm:text-base">Legal</h4>
-              <ul className="space-y-2 sm:space-y-3">
+              <ul className="space-y-1">
                 {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
                   <li key={item}>
                     <Link href="#" className="text-sm text-neutral-800 dark:text-neutral-200 hover:text-black dark:hover:text-white transition">

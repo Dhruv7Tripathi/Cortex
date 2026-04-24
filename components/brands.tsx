@@ -34,7 +34,7 @@ export default function BrandGrid() {
 
     const interval = setInterval(() => {
       setActivePairIndex((prev) => (prev + 1) % DIAGONAL_PAIRS.length);
-    }, 1200);
+    }, 1800);
 
     return () => clearInterval(interval);
   }, [isUserHovering]);
