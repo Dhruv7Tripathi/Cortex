@@ -19,7 +19,7 @@ export default function Footer() {
       ">
 
         {/* Left column */}
-        <div className="lg:col-span-4 ml-6 space-y-5 sm:space-y-6">
+        <div className="lg:col-span-4 ml-6 space-y-5 sm:space-y-4">
           <Link href="/" className="flex items-center gap-3">
             <Image
               width={40}
@@ -32,14 +32,41 @@ export default function Footer() {
             <h3 className="text-xl font-bold">Cortex</h3>
           </Link>
 
-          <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed max-w-sm">
+          <p className="text-neutral-800 dark:text-neutral-200 text-sm leading-relaxed max-w-sm">
             Cortex is a modern project management tool designed for
             high-performance teams. Built for speed and collaboration.
           </p>
 
-          <Button className="bg-neutral-900 dark:bg-white text-white dark:text-black hover:opacity-90 rounded-lg px-6 font-semibold w-full sm:w-auto">
-            Start building
-          </Button>
+          <div className="flex w-full sm:w-auto items-center gap-2">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="
+      w-full sm:w-44
+      px-4 py-2.5
+      text-sm
+      rounded-sm
+      bg-transparent
+      border border-neutral-300 dark:border-neutral-700
+      text-black dark:text-white
+      placeholder:text-neutral-500
+      focus:outline-none focus:ring-2 focus:ring-neutral-400 dark:focus:ring-neutral-600
+    "
+            />
+
+            <Button
+              className="
+      px-4 py-1.5
+      rounded-sm
+      bg-neutral-200 dark:bg-white
+      text-black dark:text-black
+      hover:bg-neutral-300 dark:hover:bg-neutral-700
+      text-sm font-medium
+    "
+            >
+              Subscribe
+            </Button>
+          </div>
         </div>
 
         {/* Links Section */}
