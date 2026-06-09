@@ -1,6 +1,8 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { useEffect, useRef } from "react"
+// import { motion } from "framer-motion"
+import gsap from "gsap"
 import { Button } from "@/components/ui/button"
 import {
   Apple,
@@ -25,10 +27,54 @@ const icons = [
 ]
 
 export default function CTASection() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const iconRefs = useRef<(HTMLDivElement | null)[]>([])
+
+  useEffect(() => {
+    if (!containerRef.current) return
+
+    icons.forEach(({ Icon, color }, index) => {
+      const orbit = (index % 3) + 1
+      const radius = orbit * 110
+      const duration = 15 + index * 2
+
+      gsap.to(iconRefs.current[index], {
+        rotation: 360,
+        transformOrigin: "center center",
+        duration: duration,
+        ease: "none",
+        repeat: -1,
+      })
+
+      // animate position using onUpdate to compute x/y (gsap expects numeric values for x/y)
+      gsap.to(iconRefs.current[index], {
+        duration: duration,
+        ease: "none",
+        repeat: -1,
+        onUpdate: function () {
+          const progress = this.progress()
+          const angle = progress * 360
+          const x = Math.cos((angle * Math.PI) / 180) * radius
+          const y = Math.sin((angle * Math.PI) / 180) * radius
+          gsap.set(iconRefs.current[index], { x, y })
+        },
+      })
+    })
+
+    return () => {
+      icons.forEach((_, index) => {
+        gsap.killTweensOf(iconRefs.current[index])
+      })
+    }
+  }, [])
+
   return (
     <section className="relative overflow-hidden flex flex-col items-center justify-center py-32 bg-white dark:bg-black border-t border-neutral-200 dark:border-neutral-800">
       {/* Orbital background */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <div
+        ref={containerRef}
+        className="absolute inset-0 flex items-center justify-center pointer-events-none"
+      >
         <div className="relative w-full max-w-4xl aspect-square flex items-center justify-center">
           {/* Concentric circles */}
           {[1, 2, 3].map((circle) => (
@@ -44,20 +90,13 @@ export default function CTASection() {
 
           {/* Orbiting Icons */}
           {icons.map(({ Icon, color }, index) => {
-            const orbit = (index % 3) + 1
-            const duration = 20 + index * 4
-            const radius = orbit * 110
-
             return (
-              <motion.div
+              <div
                 key={index}
-                className="absolute inset-0 flex items-center justify-center"
-                animate={{ rotate: 360 }}
-                transition={{
-                  duration,
-                  repeat: Infinity,
-                  ease: "linear",
+                ref={(el) => {
+                  if (el) iconRefs.current[index] = el
                 }}
+                className="absolute inset-0 flex items-center justify-center"
               >
                 <div
                   className={`p-3 rounded-xl border shadow-lg backdrop-blur-sm
@@ -65,12 +104,12 @@ export default function CTASection() {
                     border-neutral-200 dark:border-neutral-800
                     ${color}`}
                   style={{
-                    transform: `translateX(${radius}px)`,
+                    transform: `translateX(${110}px)`,
                   }}
                 >
                   <Icon size={28} />
                 </div>
-              </motion.div>
+              </div>
             )
           })}
         </div>
